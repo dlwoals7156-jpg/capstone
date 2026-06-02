@@ -17,8 +17,6 @@ export const ITEMS_DB: Record<string, string[]> = {
   코트: ["클래식 울 코트", "A라인 체스터필드 코트", "오버핏 롱 코트", "크롭 쇼트 코트", "더블 캐시미어 코트", "벨티드 트렌치 코트"],
 };
 
-export const HINTS = ["티셔츠", "원피스", "자켓", "슬랙스", "니트", "코트"];
-
 export const PC_QUESTIONS: PCQuestion[] = [
   {
     q: "민낯 피부의 기본 바탕색은 어느 쪽에 가장 가깝나요?",

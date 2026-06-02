@@ -1,9 +1,9 @@
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends, Query, Response
 
-from backend.app.dependencies import get_optional_current_user
+from backend.app.dependencies import get_current_user, get_optional_current_user
 from backend.models.schemas import RecommendRequest
-from backend.services.analysis_service import save_recommendation
-from backend.services.recommendation_service import build_recommendation_response, generate_product_detail_html, generate_product_svg
+from backend.services.analysis_service import delete_recommendation, save_recommendation
+from backend.services.recommendation_service import build_recommendation_response, generate_product_detail_html, generate_product_svg, get_search_suggestions
 
 router = APIRouter(tags=["recommendations"])
 
@@ -16,6 +16,16 @@ def legacy_recommend(payload: RecommendRequest, current_user: dict | None = Depe
 @router.post("/recommendations")
 def recommend(payload: RecommendRequest, current_user: dict | None = Depends(get_optional_current_user)):
     return _build_and_optionally_save(payload, current_user)
+
+
+@router.delete("/recommendations/{recommendation_id}")
+def remove_saved_recommendation(recommendation_id: int, current_user: dict = Depends(get_current_user)):
+    return delete_recommendation(recommendation_id, current_user["id"])
+
+
+@router.get("/search/suggestions")
+def search_suggestions(q: str = Query(default="", max_length=80), limit: int = Query(default=8, ge=1, le=12)):
+    return get_search_suggestions(q, limit)
 
 
 @router.get("/product-images/{product_id}.svg")

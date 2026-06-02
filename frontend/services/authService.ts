@@ -58,3 +58,10 @@ export async function getMyPageDashboard(): Promise<MyPageDashboard> {
   const response = await axios.get(`${API_BASE_URL}/users/me/dashboard`, { headers: authHeaders() });
   return response.data;
 }
+
+export async function deleteSavedRecommendation(recommendationId: number): Promise<{ id: number; message: string }> {
+  const response = await axios.delete(`${API_BASE_URL}/recommendations/${recommendationId}`, {
+    headers: authHeaders(),
+  });
+  return response.data;
+}

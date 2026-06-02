@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { LogIn, RefreshCw } from "lucide-react";
+import { LogIn, RefreshCw, Trash2 } from "lucide-react";
 import { MyPageDashboard, Page } from "../src/types";
-import { getMyPageDashboard } from "../services/authService";
+import { deleteSavedRecommendation, getMyPageDashboard } from "../services/authService";
 import { BackButton } from "../components/BackButton";
 import { PageHeader } from "../components/PageHeader";
 
@@ -14,6 +14,7 @@ const genderLabel = (gender?: string | null) => (gender === "male" ? "남성" : 
 export function MyPage({ onNavigate }: MyPageProps) {
   const [dashboard, setDashboard] = useState<MyPageDashboard | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState<number | null>(null);
   const [message, setMessage] = useState("");
 
   const loadDashboard = async () => {
@@ -33,6 +34,28 @@ export function MyPage({ onNavigate }: MyPageProps) {
   useEffect(() => {
     void loadDashboard();
   }, []);
+
+  const handleDeleteRecommendation = async (recommendationId: number) => {
+    const shouldDelete = window.confirm("이 추천 목록을 삭제할까요?");
+    if (!shouldDelete) return;
+    setDeletingId(recommendationId);
+    setMessage("");
+    try {
+      await deleteSavedRecommendation(recommendationId);
+      setDashboard((current) =>
+        current
+          ? {
+              ...current,
+              recommendations: current.recommendations.filter((item) => item.id !== recommendationId),
+            }
+          : current,
+      );
+    } catch {
+      setMessage("추천 목록 삭제에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   return (
     <section className="mx-auto max-w-5xl">
@@ -134,6 +157,12 @@ export function MyPage({ onNavigate }: MyPageProps) {
               </div>
 
               <div className="mt-5 space-y-4">
+                {message && (
+                  <p className="rounded-lg border border-black/10 bg-white p-3 text-[12px] text-black/55">
+                    {message}
+                  </p>
+                )}
+
                 {dashboard.recommendations.length === 0 && (
                   <p className="rounded-lg bg-black/[0.015] p-4 text-[13px] text-black/45">
                     아직 저장된 추천 결과가 없습니다. 로그인 상태에서 추천 검색을 실행하면 이곳에 저장됩니다.
@@ -142,7 +171,19 @@ export function MyPage({ onNavigate }: MyPageProps) {
 
                 {dashboard.recommendations.map((recommendation) => (
                   <div key={recommendation.id} className="rounded-lg border border-black/5 bg-black/[0.015] p-4">
-                    <p className="text-[11px] text-black/35">{recommendation.created_at}</p>
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="text-[11px] text-black/35">{recommendation.created_at}</p>
+                      <button
+                        type="button"
+                        onClick={() => void handleDeleteRecommendation(recommendation.id)}
+                        disabled={deletingId === recommendation.id}
+                        className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-black/10 bg-white text-black/45 transition-colors hover:border-black/30 hover:text-black disabled:cursor-not-allowed disabled:opacity-40"
+                        aria-label="추천 목록 삭제"
+                        title="삭제"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                    </div>
                     <p className="mt-2 text-[13px] leading-relaxed text-black/60">{recommendation.recommended_style}</p>
                     <div className="mt-4 grid gap-2 sm:grid-cols-2">
                       {recommendation.recommended_items.slice(0, 4).map((item) => (

@@ -3874,5 +3874,46 @@
     "product_url": null,
     "recommendation_reason": "다크 체리 컬러가 겨울 딥의 고대비 이미지를 강화하고 포인트 메이크업에 적합합니다.",
     "search_text": "다크 체리 립 라커 tone lab female lip lip_lacquer 다크 체리 burgundy cool winter_deep,winter_true velvet chic,luxury,elegant fall,winter date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "fashion-101",
+    "product_type": "fashion",
+    "product_name": "블랙 테일러드 자켓",
+    "brand_name": "Nero Studio",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "tailored_jacket",
+    "color_group": "black",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "inverted_triangle",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "office",
+      "interview"
+    ],
+    "price": 139000,
+    "image_url": "/images/fashion/f101.jpg",
+    "product_url": "/products/fashion-101",
+    "recommendation_reason": "블랙 컬러와 정돈된 테일러드 실루엣이 겨울 딥, 스트레이트 골격, 직사각형 체형에 안정적으로 어울립니다.",
+    "search_text": "블랙 테일러드 자켓 nero studio unisex outer tailored_jacket structured 블랙 black winter_deep,winter_bright,winter_true straight,inverted_triangle,rectangle minimal,chic,modern fall,winter office,date,interview fashion 패션 상품"
   }
 ]

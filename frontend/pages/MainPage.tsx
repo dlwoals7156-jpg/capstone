@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -13,15 +13,16 @@ import {
 import {
   Page,
   RecommendationProduct,
+  SearchSuggestion,
   StylePreference,
   UserProfile,
 } from "../src/types";
 import {
-  HINTS,
   ITEMS_DB,
   PC_RESULTS,
   STYLE_OPTIONS,
 } from "../src/constants/data";
+import { fetchSearchSuggestions } from "../services/searchService";
 
 interface MainPageProps {
   selectedColor: string;
@@ -45,6 +46,14 @@ const colorQuickOptions = Object.values(PC_RESULTS).map((result) => result.name)
 const skeletonQuickOptions = ["스트레이트", "내추럴", "웨이브", "스트레이트 + 내추럴 혼합형"];
 const bodyQuickOptions = ["역삼각형", "삼각형", "직사각형", "모래시계", "타원형"];
 const categoryIcons = [Shirt, Sparkles, SlidersHorizontal, Ruler, Shirt, Sparkles];
+const suggestionSourceLabels: Record<SearchSuggestion["source"], string> = {
+  popular: "인기",
+  keyword: "키워드",
+  product: "상품",
+  brand: "브랜드",
+  attribute: "속성",
+  category: "분류",
+};
 
 export function MainPage({
   selectedColor,
@@ -63,6 +72,9 @@ export function MainPage({
   isSearched,
 }: MainPageProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchMessage, setSearchMessage] = useState<string>("");
+  const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
+  const [isSuggestionsOpen, setIsSuggestionsOpen] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("티셔츠");
 
   const selectedStyleLabels = userProfile.stylePreferences
@@ -70,6 +82,33 @@ export function MainPage({
     .filter(Boolean);
 
   const backendTopConfidence = backendItems[0]?.matchConfidence;
+
+  useEffect(() => {
+    const query = searchQuery.trim();
+    if (!query) {
+      setSuggestions([]);
+      return;
+    }
+
+    let cancelled = false;
+    const timer = window.setTimeout(async () => {
+      try {
+        const nextSuggestions = await fetchSearchSuggestions(query);
+        if (!cancelled) {
+          setSuggestions(nextSuggestions);
+        }
+      } catch {
+        if (!cancelled) {
+          setSuggestions([]);
+        }
+      }
+    }, 140);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [searchQuery]);
 
   const recommendationReasons = [
     `${selectedColor} 퍼스널컬러와 얼굴 주변 색 조화를 우선 반영`,
@@ -91,18 +130,37 @@ export function MainPage({
   };
 
   const handleSearchSubmit = () => {
-    handleBackendSearch(searchQuery);
+    const query = searchQuery.trim();
+    if (!query) {
+      setSearchMessage("검색어를 입력해 주세요.");
+      setSuggestions([]);
+      setIsSuggestionsOpen(false);
+      return;
+    }
+    setSearchMessage("");
+    setIsSuggestionsOpen(false);
+    handleBackendSearch(query);
   };
 
-  const handleHintClick = (hint: string) => {
-    const q = `${selectedColor} ${selectedStyleLabels[0] || "미니멀"} ${hint} 추천`;
-    setSearchQuery(q);
-    handleBackendSearch(q);
+  const handleSearchInputChange = (value: string) => {
+    setSearchQuery(value);
+    setSearchMessage("");
+    setIsSuggestionsOpen(true);
+  };
+
+  const handleSuggestionClick = (suggestion: SearchSuggestion) => {
+    setSearchQuery(suggestion.label);
+    setSearchMessage("");
+    setSuggestions([]);
+    setIsSuggestionsOpen(false);
+    handleBackendSearch(suggestion.label);
   };
 
   const handleCategoryClick = (name: string) => {
     const q = `${selectedColor} ${selectedBody} 체형에 어울리는 ${name}`;
     setSearchQuery(q);
+    setSuggestions([]);
+    setIsSuggestionsOpen(false);
     handleBackendSearch(q);
   };
 
@@ -278,38 +336,58 @@ export function MainPage({
         </div>
 
         <div className="rounded-lg border border-black p-4 sm:p-5">
-          <div className="relative flex items-center">
-            <Search size={16} className="absolute left-4 text-black/35" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
-              placeholder="예: 면접에 입을 겨울 딥 미니멀 자켓 추천"
-              className="w-full rounded-lg border border-black/10 bg-black/[0.015] py-3.5 pl-11 pr-24 text-[14px] text-black outline-none transition-colors placeholder:text-black/30 focus:border-black"
-            />
-            <button
-              type="button"
-              onClick={handleSearchSubmit}
-              className="absolute right-2 rounded-lg bg-black px-4 py-2 text-[11px] uppercase tracking-wider text-white transition-colors hover:bg-black/80"
-            >
-              Search
-            </button>
+          <div className="relative">
+            <div className="relative flex items-center">
+              <Search size={16} className="absolute left-4 text-black/35" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleSearchInputChange(e.target.value)}
+                onFocus={() => setIsSuggestionsOpen(true)}
+                onBlur={() => window.setTimeout(() => setIsSuggestionsOpen(false), 120)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearchSubmit();
+                  if (e.key === "Escape") setIsSuggestionsOpen(false);
+                }}
+                placeholder="예: 면접에 입을 겨울 딥 미니멀 자켓 추천"
+                autoComplete="off"
+                aria-autocomplete="list"
+                aria-expanded={isSuggestionsOpen && suggestions.length > 0}
+                className="w-full rounded-lg border border-black/10 bg-black/[0.015] py-3.5 pl-11 pr-24 text-[14px] text-black outline-none transition-colors placeholder:text-black/30 focus:border-black"
+              />
+              <button
+                type="button"
+                onClick={handleSearchSubmit}
+                className="absolute right-2 rounded-lg bg-black px-4 py-2 text-[11px] uppercase tracking-wider text-white transition-colors hover:bg-black/80"
+              >
+                Search
+              </button>
+            </div>
+
+            {isSuggestionsOpen && searchQuery.trim() && suggestions.length > 0 && (
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-20 overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm">
+                {suggestions.map((suggestion) => (
+                  <button
+                    key={`${suggestion.source}-${suggestion.label}`}
+                    type="button"
+                    onMouseDown={(event) => event.preventDefault()}
+                    onClick={() => handleSuggestionClick(suggestion)}
+                    className="flex w-full items-center justify-between gap-3 border-b border-black/5 px-4 py-3 text-left text-[13px] text-black/70 transition-colors last:border-b-0 hover:bg-black/[0.025] hover:text-black"
+                  >
+                    <span className="truncate">{suggestion.label}</span>
+                    <span className="shrink-0 text-[10px] uppercase tracking-[0.16em] text-black/28">
+                      {suggestionSourceLabels[suggestion.source]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="mr-1 text-[10px] uppercase tracking-wider text-black/30">추천 힌트</span>
-            {HINTS.map((hint) => (
-              <button
-                key={hint}
-                type="button"
-                onClick={() => handleHintClick(hint)}
-                className="rounded-lg border border-black/10 px-3 py-1.5 text-[11px] text-black/55 transition-colors hover:border-black/30 hover:text-black"
-              >
-                {hint}
-              </button>
-            ))}
-          </div>
+          {searchMessage && (
+            <p className="mt-3 rounded-lg bg-black/[0.025] px-3 py-2 text-[12px] text-black/50">{searchMessage}</p>
+          )}
+
         </div>
 
         <div className="rounded-lg border border-black/10 bg-black/[0.015] p-5">

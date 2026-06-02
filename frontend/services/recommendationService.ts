@@ -17,6 +17,7 @@ export interface RecommendationResponse {
   ai_analysis?: {
     reason?: string;
     match_confidence?: number;
+    search_relevance?: number;
     search_mode?: string;
     external_search_keywords?: string[];
   };

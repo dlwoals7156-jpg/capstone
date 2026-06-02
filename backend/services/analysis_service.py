@@ -74,3 +74,17 @@ def save_recommendation(user_id: int, recommended_items: list[dict], recommended
         )
         conn.commit()
     return {"id": cursor.lastrowid, "message": "추천 결과가 저장되었습니다."}
+
+
+def delete_recommendation(recommendation_id: int, user_id: int) -> dict:
+    if not user_id:
+        raise HTTPException(status_code=400, detail="user_id가 필요합니다.")
+    with get_connection() as conn:
+        cursor = conn.execute(
+            "DELETE FROM recommendations WHERE id = ? AND user_id = ?",
+            (recommendation_id, user_id),
+        )
+        conn.commit()
+    if cursor.rowcount == 0:
+        raise HTTPException(status_code=404, detail="삭제할 추천 결과를 찾을 수 없습니다.")
+    return {"id": recommendation_id, "message": "추천 결과가 삭제되었습니다."}

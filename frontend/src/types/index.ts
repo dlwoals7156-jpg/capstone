@@ -196,11 +196,18 @@ export interface RecommendationProduct {
   recommendationReason: string;
   matchScore: number;
   matchConfidence: number;
+  searchRelevance?: number;
+  rankingBreakdown?: Record<string, number | string[]>;
   matchReasons: string[];
   category: string;
   subCategory: string;
   colorGroup: string;
   brandName: string;
+}
+
+export interface SearchSuggestion {
+  label: string;
+  source: "popular" | "keyword" | "product" | "brand" | "attribute" | "category";
 }
 
 export interface MyPageRecommendation {

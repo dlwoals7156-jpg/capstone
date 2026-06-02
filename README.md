@@ -139,6 +139,7 @@ POST /analysis/skeleton-type     골격 분석 결과 저장
 POST /analysis/body-shape        체형 분석 결과 저장
 POST /analysis/body-type         기존 호환용 골격체형 결과 저장
 POST /recommendations            추천 결과 제공
+GET  /search/suggestions         검색창 자동완성 추천어 제공
 POST /recommend                  기존 프론트 호환용 추천 API
 POST /ai/personal-color          AI 퍼스널컬러 모델 연동 지점
 POST /ai/body-type               AI 골격체형 모델 연동 지점
