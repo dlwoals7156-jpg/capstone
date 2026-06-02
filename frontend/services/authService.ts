@@ -65,3 +65,10 @@ export async function deleteSavedRecommendation(recommendationId: number): Promi
   });
   return response.data;
 }
+
+export async function deleteAllSavedRecommendations(): Promise<{ deleted_count: number; message: string }> {
+  const response = await axios.delete(`${API_BASE_URL}/recommendations`, {
+    headers: authHeaders(),
+  });
+  return response.data;
+}

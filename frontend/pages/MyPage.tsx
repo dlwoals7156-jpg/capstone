@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { LogIn, RefreshCw, Trash2 } from "lucide-react";
 import { MyPageDashboard, Page } from "../src/types";
-import { deleteSavedRecommendation, getMyPageDashboard } from "../services/authService";
+import { deleteAllSavedRecommendations, deleteSavedRecommendation, getMyPageDashboard } from "../services/authService";
 import { BackButton } from "../components/BackButton";
 import { PageHeader } from "../components/PageHeader";
 
@@ -42,16 +42,33 @@ export function MyPage({ onNavigate }: MyPageProps) {
     setMessage("");
     try {
       await deleteSavedRecommendation(recommendationId);
+      await loadDashboard();
+    } catch {
+      setMessage("추천 목록 삭제에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
+  const handleDeleteAllRecommendations = async () => {
+    const shouldDelete = window.confirm("저장된 추천 목록을 모두 삭제할까요?");
+    if (!shouldDelete) return;
+    setDeletingId(-1);
+    setMessage("");
+    try {
+      const result = await deleteAllSavedRecommendations();
       setDashboard((current) =>
         current
           ? {
               ...current,
-              recommendations: current.recommendations.filter((item) => item.id !== recommendationId),
+              recommendations: [],
+              recommendations_total: 0,
             }
           : current,
       );
+      setMessage(`${result.deleted_count}개의 추천 목록을 삭제했습니다.`);
     } catch {
-      setMessage("추천 목록 삭제에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+      setMessage("추천 목록 전체 삭제에 실패했습니다. 잠시 후 다시 시도해 주세요.");
     } finally {
       setDeletingId(null);
     }
@@ -148,12 +165,24 @@ export function MyPage({ onNavigate }: MyPageProps) {
             </div>
 
             <div className="rounded-lg border border-black/10 p-5">
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.22em] text-black/35">Recent Recommendations</p>
                   <h3 className="mt-1 text-xl font-light">추천 아이템 목록</h3>
                 </div>
-                <span className="text-[11px] text-black/35">{dashboard.recommendations.length} saved</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-black/35">{dashboard.recommendations_total} saved</span>
+                  {dashboard.recommendations_total > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => void handleDeleteAllRecommendations()}
+                      disabled={deletingId !== null}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-[11px] uppercase tracking-widest text-black/45 transition-colors hover:border-black/30 hover:text-black disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      <Trash2 size={13} /> 전체 삭제
+                    </button>
+                  )}
+                </div>
               </div>
 
               <div className="mt-5 space-y-4">

@@ -12,7 +12,7 @@ import { SignupPage } from "../pages/SignupPage";
 import { SkeletonPage } from "../pages/SkeletonPage";
 import { saveBodyShapeResult, savePersonalColorResult, saveSkeletonTypeResult } from "../services/analysisService";
 import { getAccessToken, getCurrentUser, getStoredUser, logout } from "../services/authService";
-import { fetchRecommendations } from "../services/recommendationService";
+import { fetchRecommendations, saveRecommendationResult } from "../services/recommendationService";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("main");
@@ -30,6 +30,9 @@ export default function App() {
   const [aiGuidance, setAiGuidance] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);   // Loading spinner status
   const [isSearched, setIsSearched] = useState<boolean>(false); // Whether a search was executed
+  const [isSavingRecommendation, setIsSavingRecommendation] = useState<boolean>(false);
+  const [savedRecommendationId, setSavedRecommendationId] = useState<number | null>(null);
+  const [saveMessage, setSaveMessage] = useState<string>("");
 
   const styleLabels = userProfile.stylePreferences
     .map((value) => STYLE_OPTIONS.find((item) => item.value === value)?.label)
@@ -65,6 +68,8 @@ export default function App() {
     setIsLoading(true);
     setIsSearched(true);
     setAiGuidance("");
+    setSavedRecommendationId(null);
+    setSaveMessage("");
 
     try {
       const response = await fetchRecommendations({
@@ -100,6 +105,38 @@ export default function App() {
       );
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleSaveRecommendation = async () => {
+    if (!currentUser) {
+      setSaveMessage("로그인 후 추천 목록을 저장할 수 있습니다.");
+      setCurrentPage("login");
+      return;
+    }
+    if (backendItems.length === 0) {
+      setSaveMessage("저장할 추천 결과가 없습니다.");
+      return;
+    }
+    if (savedRecommendationId) {
+      setSaveMessage("이미 저장된 추천 목록입니다.");
+      return;
+    }
+
+    setIsSavingRecommendation(true);
+    setSaveMessage("");
+    try {
+      const saved = await saveRecommendationResult({
+        recommendedItems: backendItems,
+        recommendedStyle: aiGuidance || "DeepLook 추천 결과",
+      });
+      setSavedRecommendationId(saved.id);
+      setSaveMessage("마이페이지에 추천 목록을 저장했습니다.");
+    } catch (error) {
+      console.error("추천 목록 저장 실패:", error);
+      setSaveMessage("추천 목록 저장에 실패했습니다. 로그인 상태를 확인해 주세요.");
+    } finally {
+      setIsSavingRecommendation(false);
     }
   };
 
@@ -249,6 +286,10 @@ export default function App() {
             isLoading={isLoading}
             isSearched={isSearched}
             setIsSearched={setIsSearched}
+            onSaveRecommendation={handleSaveRecommendation}
+            isSavingRecommendation={isSavingRecommendation}
+            savedRecommendationId={savedRecommendationId}
+            saveMessage={saveMessage}
           />
         )}
 

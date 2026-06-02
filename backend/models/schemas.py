@@ -69,6 +69,11 @@ class RecommendRequest(BaseModel):
     camera_quality: dict[str, Any] = Field(default_factory=dict)
 
 
+class RecommendationSaveRequest(BaseModel):
+    recommended_items: list[dict[str, Any]] = Field(default_factory=list)
+    recommended_style: str = ""
+
+
 class AnalysisSaveRequest(BaseModel):
     user_id: Optional[int] = None
     result_name: str

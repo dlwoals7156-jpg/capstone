@@ -1,26 +1,40 @@
 from fastapi import APIRouter, Depends, Query, Response
 
-from backend.app.dependencies import get_current_user, get_optional_current_user
-from backend.models.schemas import RecommendRequest
-from backend.services.analysis_service import delete_recommendation, save_recommendation
+from backend.app.dependencies import get_current_user
+from backend.models.schemas import RecommendationSaveRequest, RecommendRequest
+from backend.services.analysis_service import delete_all_recommendations, delete_recommendation, save_recommendation
 from backend.services.recommendation_service import build_recommendation_response, generate_product_detail_html, generate_product_svg, get_search_suggestions
 
 router = APIRouter(tags=["recommendations"])
 
 
 @router.post("/recommend")
-def legacy_recommend(payload: RecommendRequest, current_user: dict | None = Depends(get_optional_current_user)):
-    return _build_and_optionally_save(payload, current_user)
+def legacy_recommend(payload: RecommendRequest):
+    return build_recommendation_response(payload)
 
 
 @router.post("/recommendations")
-def recommend(payload: RecommendRequest, current_user: dict | None = Depends(get_optional_current_user)):
-    return _build_and_optionally_save(payload, current_user)
+def recommend(payload: RecommendRequest):
+    return build_recommendation_response(payload)
+
+
+@router.post("/recommendations/saved")
+def save_recommendation_result(payload: RecommendationSaveRequest, current_user: dict = Depends(get_current_user)):
+    return save_recommendation(
+        current_user["id"],
+        payload.recommended_items,
+        payload.recommended_style,
+    )
 
 
 @router.delete("/recommendations/{recommendation_id}")
 def remove_saved_recommendation(recommendation_id: int, current_user: dict = Depends(get_current_user)):
     return delete_recommendation(recommendation_id, current_user["id"])
+
+
+@router.delete("/recommendations")
+def remove_all_saved_recommendations(current_user: dict = Depends(get_current_user)):
+    return delete_all_recommendations(current_user["id"])
 
 
 @router.get("/search/suggestions")
@@ -36,15 +50,3 @@ def product_image(product_id: str):
 @router.get("/products/{product_id}")
 def product_detail(product_id: str):
     return Response(content=generate_product_detail_html(product_id), media_type="text/html; charset=utf-8")
-
-
-def _build_and_optionally_save(payload: RecommendRequest, current_user: dict | None):
-    response = build_recommendation_response(payload)
-    if current_user:
-        saved = save_recommendation(
-            current_user["id"],
-            response.get("real_products", []),
-            response.get("ai_analysis", {}).get("reason", ""),
-        )
-        response["saved_recommendation_id"] = saved["id"]
-    return response

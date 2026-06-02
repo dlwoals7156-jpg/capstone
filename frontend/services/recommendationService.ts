@@ -50,3 +50,18 @@ export async function fetchRecommendations(input: RecommendationRequestInput): P
 
   return response.data;
 }
+
+export async function saveRecommendationResult(payload: {
+  recommendedItems: RecommendationProduct[];
+  recommendedStyle: string;
+}): Promise<{ id: number; message: string }> {
+  const response = await axios.post(
+    `${API_BASE_URL}/recommendations/saved`,
+    {
+      recommended_items: payload.recommendedItems,
+      recommended_style: payload.recommendedStyle,
+    },
+    { headers: authHeaders() },
+  );
+  return response.data;
+}

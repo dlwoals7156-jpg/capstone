@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import {
   ArrowUpRight,
+  Bookmark,
   CheckCircle2,
   ChevronRight,
   Ruler,
@@ -40,6 +41,10 @@ interface MainPageProps {
   isLoading: boolean;
   isSearched: boolean;
   setIsSearched: (searched: boolean) => void;
+  onSaveRecommendation: () => Promise<void>;
+  isSavingRecommendation: boolean;
+  savedRecommendationId: number | null;
+  saveMessage: string;
 }
 
 const colorQuickOptions = Object.values(PC_RESULTS).map((result) => result.name);
@@ -70,6 +75,10 @@ export function MainPage({
   aiGuidance,
   isLoading,
   isSearched,
+  onSaveRecommendation,
+  isSavingRecommendation,
+  savedRecommendationId,
+  saveMessage,
 }: MainPageProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchMessage, setSearchMessage] = useState<string>("");
@@ -424,10 +433,33 @@ export function MainPage({
             )}
 
             <div>
-              <h3 className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-black/40">
-                맞춤 상품 매칭 결과 ({backendItems.length}개)
-                <span className="h-px flex-1 bg-black/5" />
-              </h3>
+              <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <h3 className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-black/40">
+                  맞춤 상품 매칭 결과 ({backendItems.length}개)
+                  <span className="hidden h-px w-16 bg-black/5 sm:block" />
+                </h3>
+                {backendItems.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => void onSaveRecommendation()}
+                    disabled={isSavingRecommendation || Boolean(savedRecommendationId)}
+                    className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-[11px] uppercase tracking-widest transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${
+                      savedRecommendationId
+                        ? "border border-black/10 bg-black/[0.025] text-black/45"
+                        : "bg-black text-white hover:bg-black/80"
+                    }`}
+                  >
+                    {savedRecommendationId ? <CheckCircle2 size={14} /> : <Bookmark size={14} />}
+                    {savedRecommendationId ? "저장 완료" : isSavingRecommendation ? "저장 중" : "추천 목록 저장"}
+                  </button>
+                )}
+              </div>
+
+              {saveMessage && (
+                <p className="mb-4 rounded-lg border border-black/10 bg-white px-4 py-3 text-[12px] text-black/55">
+                  {saveMessage}
+                </p>
+              )}
 
               {backendItems.length === 0 ? (
                 <p className="rounded-lg border border-black/10 py-8 text-center text-[13px] font-light text-black/40">

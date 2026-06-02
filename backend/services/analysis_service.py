@@ -88,3 +88,12 @@ def delete_recommendation(recommendation_id: int, user_id: int) -> dict:
     if cursor.rowcount == 0:
         raise HTTPException(status_code=404, detail="삭제할 추천 결과를 찾을 수 없습니다.")
     return {"id": recommendation_id, "message": "추천 결과가 삭제되었습니다."}
+
+
+def delete_all_recommendations(user_id: int) -> dict:
+    if not user_id:
+        raise HTTPException(status_code=400, detail="user_id가 필요합니다.")
+    with get_connection() as conn:
+        cursor = conn.execute("DELETE FROM recommendations WHERE user_id = ?", (user_id,))
+        conn.commit()
+    return {"deleted_count": cursor.rowcount, "message": "추천 결과 전체가 삭제되었습니다."}

@@ -244,6 +244,7 @@ export interface MyPageDashboard {
     confidence: number;
     created_at: string;
   } | null;
+  recommendations_total: number;
   recommendations: MyPageRecommendation[];
 }
 

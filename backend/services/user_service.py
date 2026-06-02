@@ -116,10 +116,13 @@ def get_user_dashboard(user_id: int) -> dict[str, Any]:
             FROM recommendations
             WHERE user_id = ?
             ORDER BY datetime(created_at) DESC, id DESC
-            LIMIT 5
             """,
             (user_id,),
         ).fetchall()
+        recommendations_total = conn.execute(
+            "SELECT COUNT(*) AS count FROM recommendations WHERE user_id = ?",
+            (user_id,),
+        ).fetchone()["count"]
 
     def parse_items(value: str) -> list[dict[str, Any]]:
         try:
@@ -134,6 +137,7 @@ def get_user_dashboard(user_id: int) -> dict[str, Any]:
         "latest_skeleton_type": dict(skeleton) if skeleton else None,
         "latest_body_shape": dict(body_shape) if body_shape else None,
         "body_type_results": [dict(row) for row in legacy_body_results],
+        "recommendations_total": recommendations_total,
         "recommendations": [
             {
                 "id": row["id"],
