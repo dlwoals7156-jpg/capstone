@@ -6,9 +6,7 @@ settings:
 
 importers:
 
-  .: {}
-
-  frontend:
+  .:
     dependencies:
       '@emotion/react':
         specifier: 11.14.0

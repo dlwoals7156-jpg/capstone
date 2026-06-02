@@ -1,9 +1,12 @@
 node_modules/
+.pnpm-store/
 dist/
+frontend/dist/
 .venv/
 __pycache__/
 *.pyc
 *.bak
+backend/database/app.db
 
 .DS_Store
 .env

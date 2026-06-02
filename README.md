@@ -1,171 +1,193 @@
-# DeepLook
+# DeepLook Capstone
 
-AI 기반 퍼스널 컬러, 골격, 체형 분석 결과를 사용자의 TPO 검색 문장과 결합해 패션 아이템을 추천하는 웹 서비스입니다.
-
-## 실행 방법
-
-프론트엔드:
-
-```bash
-pnpm run dev
-```
-
-접속 주소:
-
-```text
-http://localhost:5173
-```
-
-백엔드:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn cap:app --reload --host 127.0.0.1 --port 8000
-```
-
-백엔드 확인 주소:
-
-```text
-http://127.0.0.1:8000
-```
+AI 기반 퍼스널컬러 + 골격체형 + 얼굴형 분석 및 패션/뷰티 추천 웹 서비스입니다.  
+프로젝트는 유지보수와 AWS 배포를 고려해 `frontend`, `backend`, `ai_model`로 역할을 분리했습니다.
 
 ## 프로젝트 구조
 
 ```text
-.
-├── cap.py                  # FastAPI 백엔드: 자체 상품 DB 기반 추천
-├── database/               # MySQL 스키마와 상품 샘플 데이터
-├── requirements.txt        # 백엔드 Python 의존성
-├── index.html              # Vite 앱 진입 HTML
-├── package.json            # 프론트엔드 의존성 및 실행 스크립트
-├── vite.config.ts          # Vite 설정
-├── tsconfig.json           # TypeScript 설정
-├── postcss.config.mjs      # PostCSS 설정
-├── pnpm-lock.yaml          # pnpm 잠금 파일
-├── pnpm-workspace.yaml     # pnpm 워크스페이스 설정
-├── dist/                   # 빌드 결과물, pnpm run build로 재생성 가능
-└── src/
-    ├── main.tsx            # React 앱 마운트
-    ├── App.tsx             # 전체 페이지 라우팅, 추천 API 호출 상태 관리
-    ├── index.css           # Tailwind import 및 공통 애니메이션
-    ├── types/index.ts      # 공통 타입 정의
-    ├── constants/data.ts   # 문항, 결과 설명, 팔레트, 추천 아이템 데이터
-    ├── utils/helpers.ts    # 퍼스널컬러/골격/체형 계산 로직
-    └── components/
-        ├── pages/          # 화면 단위 페이지 컴포넌트
-        └── shared/         # 공통 UI 컴포넌트
+capstone-main/
+├── frontend/                 # React + Vite 프론트엔드
+│   ├── src/                  # 앱 진입점, 공통 타입, 상수, 유틸
+│   ├── components/           # 여러 화면에서 재사용하는 UI 컴포넌트
+│   ├── pages/                # 메인, 진단, 로그인, 회원가입 화면
+│   ├── assets/               # 이미지/정적 리소스 보관 위치
+│   ├── styles/               # 전역 CSS와 Tailwind 스타일
+│   └── services/             # 백엔드 API 호출 로직
+│
+├── backend/                  # FastAPI 백엔드
+│   ├── app/                  # 설정, 보안/JWT 헬퍼
+│   ├── routes/               # REST API 엔드포인트
+│   ├── models/               # Pydantic 요청/응답 모델
+│   ├── services/             # 비즈니스 로직, 추천/사용자/분석 저장
+│   ├── database/             # SQLite 스키마, 상품 DB SQL
+│   └── main.py               # FastAPI 실행 진입점
+│
+├── ai_model/                 # AI 분석 모듈 분리 영역
+│   ├── personal_color/
+│   ├── body_type/
+│   ├── face_shape/
+│   └── recommendation/
+│
+├── docs/                     # 발표/설계 문서
+├── .env.example              # 환경변수 예시
+├── requirements.txt          # 백엔드 Python 패키지
+├── package.json              # 루트 실행 스크립트
+└── README.md
 ```
 
-## 핵심 파일 설명
+## 주요 기능
 
-### `src/App.tsx`
+- React 기반 심플 모던 UI
+- 카메라 촬영 기반 퍼스널컬러 분석 화면
+- 퍼스널컬러 자가진단 화면
+- 골격체형 분석 화면
+- 얼굴형 분석 화면
+- 로그인 및 회원가입 화면
+- 자체 상품 DB 기반 추천 결과 화면
+- FastAPI REST API
+- 회원가입/로그인 API
+- JWT 토큰 발급
+- 사용자 정보 저장 API
+- 퍼스널컬러, 골격체형, 얼굴형 결과 저장 API
+- 추천 결과 제공 API
+- AI 모델 연동용 `/ai/*` 엔드포인트
 
-앱의 중심입니다.
+## 개발 환경 준비
 
-- 현재 페이지 상태 관리
-- 선택된 퍼스널 컬러, 골격, 체형, 추천 핏 상태 관리
-- 백엔드 `/recommend` API 호출 및 로컬 상품 DB fallback
-- 메인/진단 페이지 라우팅
-
-### `src/components/pages/MainPage.tsx`
-
-메인 추천 화면입니다.
-
-- 현재 진단 프로필 표시
-- 퍼스널 컬러, 골격, 체형 진단 페이지 이동
-- 성별, 체형 정보, 스타일 취향, 착용 목적 입력
-- 검색어 입력 및 추천 결과 렌더링
-
-### `src/components/pages/PersonalColorPage.tsx`
-
-퍼스널 컬러 진단 화면입니다.
-
-- 자가 설문 진단
-- 카메라 촬영 진단
-- 이미지 업로드 진단
-- 분석 품질, 신뢰도, 경고 메시지 표시
-
-### `src/components/pages/SkeletonPage.tsx`
-
-골격 타입 자가 진단 화면입니다.
-
-- 스트레이트
-- 내추럴
-- 웨이브
-
-### `src/components/pages/BodyShapePage.tsx`
-
-체형 실루엣 자가 진단 화면입니다.
-
-- 어깨/골반 비율 응답
-- 허리 굴곡 응답
-- 상체/하체 밸런스 응답
-- 옷이 불편한 부위
-- 체중 변화 부위
-- 선택 치수 입력
-- 결과 신뢰도와 보조 후보 표시
-
-### `src/utils/helpers.ts`
-
-진단 계산 로직이 모여 있는 파일입니다.
-
-- `analyzeImageForPersonalColor`: 이미지 기반 퍼스널 컬러 분석
-- `calcPCResult`: 설문 기반 퍼스널 컬러 계산
-- `calcSkeletonResult`: 골격 타입 계산
-- `calcBodyType`: 체형 실루엣 가중치 계산
-
-### `src/constants/data.ts`
-
-화면에 쓰이는 고정 데이터입니다.
-
-- 퍼스널 컬러 설문 문항
-- 퍼스널 컬러 결과 설명
-- 골격 설문 문항
-- 기본 추천 카테고리
-
-### `cap.py`
-
-백엔드 서버입니다.
-
-- FastAPI 앱 정의
-- `database/deeplook_product_database.sql` 상품 데이터 읽기
-- 검색어, 퍼스널컬러, 골격, 체형, 성별, 스타일, 상황 기반 점수 계산
-- 추천 상품과 추천 이유, 매칭 점수 반환
-- 외부 API 키 없이 자체 상품 DB만으로 동작
-
-## 정리 기준
-
-유지해야 하는 파일:
-
-- `src/`
-- `cap.py`
-- `database/`
-- `requirements.txt`
-- `index.html`
-- `package.json`
-- `pnpm-lock.yaml`
-- `vite.config.ts`
-- `tsconfig.json`
-- `postcss.config.mjs`
-- `pnpm-workspace.yaml`
-
-지워도 되는 파일:
-
-- `__pycache__/`
-- `*.pyc`
-- `*.bak`
-
-상황에 따라 지워도 되는 파일:
-
-- `dist/`: 빌드 결과물입니다. 배포에 쓰지 않는다면 삭제 가능하며 `pnpm run build`로 다시 만들 수 있습니다.
-- `node_modules/`: 의존성 폴더입니다. 삭제하면 `pnpm install`로 다시 설치해야 합니다.
-
-## 빌드
+### 1. 백엔드 가상환경 만들기
 
 ```bash
-pnpm run build
+cd /Users/sbp/Downloads/capstone-main
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-빌드 결과는 `dist/`에 생성됩니다.
+이미 `.venv`가 만들어져 있다면 아래만 실행하면 됩니다.
+
+```bash
+source .venv/bin/activate
+```
+
+### 2. 프론트엔드 패키지 설치
+
+```bash
+cd /Users/sbp/Downloads/capstone-main/frontend
+pnpm install
+```
+
+## 실행 방법
+
+터미널을 2개 열어 각각 실행합니다.
+
+### 터미널 1: 백엔드 실행
+
+```bash
+cd /Users/sbp/Downloads/capstone-main
+source .venv/bin/activate
+uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+백엔드 확인:
+
+```bash
+curl http://127.0.0.1:8000/
+```
+
+정상 응답:
+
+```json
+{"status":"online","message":"Deeplook FastAPI backend is running."}
+```
+
+### 터미널 2: 프론트엔드 실행
+
+```bash
+cd /Users/sbp/Downloads/capstone-main
+pnpm frontend:dev
+```
+
+브라우저 접속:
+
+```text
+http://localhost:5173/
+```
+
+## 자주 쓰는 명령어
+
+```bash
+# 프론트 개발 서버
+pnpm frontend:dev
+
+# 프론트 빌드
+pnpm frontend:build
+
+# 백엔드 개발 서버
+pnpm backend:dev
+```
+
+## 백엔드 API 요약
+
+```text
+POST /auth/signup                회원가입
+POST /auth/login                 로그인 및 JWT 발급
+PUT  /users/{user_id}            사용자 정보 수정
+POST /analysis/personal-color    퍼스널컬러 결과 저장
+POST /analysis/body-type         골격체형 결과 저장
+POST /analysis/face-shape        얼굴형 결과 저장
+POST /recommendations            추천 결과 제공
+POST /recommend                  기존 프론트 호환용 추천 API
+POST /ai/personal-color          AI 퍼스널컬러 모델 연동 지점
+POST /ai/body-type               AI 골격체형 모델 연동 지점
+POST /ai/face-shape              AI 얼굴형 모델 연동 지점
+```
+
+## 데이터베이스
+
+개발용 사용자 DB는 SQLite를 사용합니다.
+
+```text
+backend/database/app.db
+```
+
+서버 시작 시 다음 테이블이 자동 생성됩니다.
+
+- `users`
+- `personal_color_results`
+- `body_type_results`
+- `face_shape_results`
+- `recommendations`
+
+상품 추천용 샘플 DB SQL은 아래 파일에 있습니다.
+
+```text
+backend/database/deeplook_product_database.sql
+```
+
+## AI 모델 폴더 역할
+
+`ai_model/`은 실제 AI 모델 코드를 백엔드 라우터와 분리하기 위한 영역입니다.
+
+```text
+ai_model/personal_color/analyzer.py
+ai_model/body_type/analyzer.py
+ai_model/face_shape/analyzer.py
+ai_model/recommendation/recommender.py
+```
+
+현재는 캡스톤 시연용 placeholder 로직이며, 추후 이미지 분석 모델이나 추천 모델을 이 파일들에 연결하면 됩니다.
+
+## AWS 배포를 위한 구조 메모
+
+- `frontend/`는 정적 빌드 후 S3 + CloudFront 배포 가능
+- `backend/`는 EC2, ECS, Elastic Beanstalk, Lambda 컨테이너 등으로 배포 가능
+- 개발용 SQLite는 운영 시 RDS MySQL/PostgreSQL로 교체 권장
+- 환경변수는 `.env.example`을 기준으로 AWS Parameter Store 또는 Secrets Manager에 분리 권장
+
+## GitHub 협업 기준
+
+- `.venv/`, `node_modules/`, `dist/`, `.env`, `backend/database/app.db`는 Git에 올리지 않습니다.
+- 기능별로 브랜치를 나누는 것을 권장합니다.
+- API 로직은 `backend/routes`와 `backend/services`를 분리해 수정합니다.
+- 프론트 API 호출은 `frontend/services`에서만 관리합니다.
