@@ -7,16 +7,44 @@ import { BackButton } from "../components/BackButton";
 import { CrossNavButtons } from "../components/CrossNavButtons";
 import { PageHeader } from "../components/PageHeader";
 import { ResultTips } from "../components/ResultTips";
+import { analyzeSkeletonType } from "../services/aiAnalysisService";
 
 interface SkeletonPageProps {
-  onComplete: (skeleton: string) => void;
+  onComplete: (skeleton: string, result?: SkeletonResult) => void;
   onNavigate: (page: Page) => void;
 }
 
 export function SkeletonPage({ onComplete, onNavigate }: SkeletonPageProps) {
   const [skAnswers, setSkAnswers] = useState<SkeletonAnswer[]>([]);
   const [skResult, setSkResult] = useState<SkeletonResult | null>(null);
-  const currentQuestion = SKELETON_QUESTIONS[skAnswers.length];
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const currentQuestion = SKELETON_QUESTIONS[Math.min(skAnswers.length, SKELETON_QUESTIONS.length - 1)];
+
+  const completeDiagnosis = async (answers: SkeletonAnswer[]) => {
+    const localResult = calcSkeletonResult(answers);
+    setIsAnalyzing(true);
+    try {
+      const aiResult = await analyzeSkeletonType({ survey_answers: answers });
+      const enhancedResult: SkeletonResult = {
+        ...localResult,
+        type: aiResult.result_name,
+        en: aiResult.result_name,
+        confidence: aiResult.confidence,
+        secondaryType: aiResult.secondary_type,
+        scores: aiResult.scores,
+        reasons: [...aiResult.evidence, ...localResult.reasons].slice(0, 8),
+        recommendationPoints: aiResult.recommendation_points,
+      };
+      setSkResult(enhancedResult);
+      onComplete(aiResult.korean_name, enhancedResult);
+    } catch (error) {
+      console.warn("백엔드 골격 분석 실패, 브라우저 계산 결과를 사용합니다.", error);
+      setSkResult(localResult);
+      onComplete(localResult.type, localResult);
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
 
   return (
     <div className="mx-auto max-w-4xl">
@@ -31,7 +59,7 @@ export function SkeletonPage({ onComplete, onNavigate }: SkeletonPageProps) {
         <div className="rounded-lg border border-black/10 p-6 sm:p-8">
           <div className="mb-6 flex items-center justify-between text-[11px] uppercase tracking-wider text-black/40">
             <span>
-              Question {skAnswers.length + 1} of {SKELETON_QUESTIONS.length}
+              Question {Math.min(skAnswers.length + 1, SKELETON_QUESTIONS.length)} of {SKELETON_QUESTIONS.length}
             </span>
             <div className="relative h-1 w-28 rounded-full bg-black/10">
               <div
@@ -41,22 +69,23 @@ export function SkeletonPage({ onComplete, onNavigate }: SkeletonPageProps) {
             </div>
           </div>
 
-          <h3 className="text-2xl font-light leading-snug">{currentQuestion.q}</h3>
+          <h3 className="text-2xl font-light leading-snug">
+            {isAnalyzing ? "백엔드 골격 분석 엔진으로 최종 점수를 계산 중입니다." : currentQuestion.q}
+          </h3>
           <div className="mt-7 grid gap-3">
             {currentQuestion.options.map((opt) => (
               <button
                 key={opt.label}
                 type="button"
+                disabled={isAnalyzing}
                 onClick={() => {
                   const next = [...skAnswers, opt.label];
                   setSkAnswers(next);
                   if (next.length === SKELETON_QUESTIONS.length) {
-                    const res = calcSkeletonResult(next);
-                    setSkResult(res);
-                    onComplete(res.type);
+                    void completeDiagnosis(next);
                   }
                 }}
-                className="rounded-lg border border-black/10 p-4 text-left transition-colors hover:border-black/30 hover:bg-black/[0.015]"
+                className="rounded-lg border border-black/10 p-4 text-left transition-colors hover:border-black/30 hover:bg-black/[0.015] disabled:cursor-not-allowed disabled:opacity-45"
               >
                 <p className="text-[14px] font-light text-black">{opt.text}</p>
                 <div className="mt-3 flex flex-wrap gap-1.5">

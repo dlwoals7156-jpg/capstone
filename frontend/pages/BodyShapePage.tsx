@@ -8,7 +8,7 @@ import { PageHeader } from "../components/PageHeader";
 import { ResultTips } from "../components/ResultTips";
 
 interface BodyShapePageProps {
-  onComplete: (bodyShape: string) => void;
+  onComplete: (bodyShape: string, result?: BodyShapeResult) => void;
   onNavigate: (page: Page) => void;
 }
 
@@ -49,7 +49,7 @@ export function BodyShapePage({ onComplete, onNavigate }: BodyShapePageProps) {
       measurements,
     });
     setBodyResult(res);
-    onComplete(res.ko);
+    onComplete(res.ko, res);
   };
 
   const ScaleButton = ({

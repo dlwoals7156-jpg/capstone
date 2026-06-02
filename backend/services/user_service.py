@@ -1,4 +1,5 @@
 from typing import Any
+import json
 
 from fastapi import HTTPException
 
@@ -32,6 +33,15 @@ def signup_user(payload: SignupRequest) -> dict[str, Any]:
     return _row_to_user(user)
 
 
+def is_email_available(email: str) -> bool:
+    normalized = email.strip().lower()
+    if "@" not in normalized or "." not in normalized.split("@")[-1]:
+        raise HTTPException(status_code=422, detail="올바른 이메일 형식이 아닙니다.")
+    with get_connection() as conn:
+        exists = conn.execute("SELECT id FROM users WHERE email = ?", (normalized,)).fetchone()
+    return exists is None
+
+
 def login_user(payload: LoginRequest) -> dict[str, Any]:
     with get_connection() as conn:
         row = conn.execute("SELECT * FROM users WHERE email = ?", (payload.email,)).fetchone()
@@ -52,3 +62,85 @@ def update_user_profile(user_id: int, payload: UserProfileRequest) -> dict[str, 
         conn.commit()
         updated = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
     return _row_to_user(updated)
+
+
+def get_user_dashboard(user_id: int) -> dict[str, Any]:
+    with get_connection() as conn:
+        user = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
+        if not user:
+            raise HTTPException(status_code=404, detail="사용자를 찾을 수 없습니다.")
+
+        personal = conn.execute(
+            """
+            SELECT id, season, tone, confidence, created_at
+            FROM personal_color_results
+            WHERE user_id = ?
+            ORDER BY datetime(created_at) DESC, id DESC
+            LIMIT 1
+            """,
+            (user_id,),
+        ).fetchone()
+        legacy_body_results = conn.execute(
+            """
+            SELECT id, body_type, confidence, created_at
+            FROM body_type_results
+            WHERE user_id = ?
+            ORDER BY datetime(created_at) DESC, id DESC
+            LIMIT 5
+            """,
+            (user_id,),
+        ).fetchall()
+        skeleton = conn.execute(
+            """
+            SELECT id, skeleton_type, confidence, created_at
+            FROM skeleton_type_results
+            WHERE user_id = ?
+            ORDER BY datetime(created_at) DESC, id DESC
+            LIMIT 1
+            """,
+            (user_id,),
+        ).fetchone()
+        body_shape = conn.execute(
+            """
+            SELECT id, body_shape, confidence, created_at
+            FROM body_shape_results
+            WHERE user_id = ?
+            ORDER BY datetime(created_at) DESC, id DESC
+            LIMIT 1
+            """,
+            (user_id,),
+        ).fetchone()
+        recommendations = conn.execute(
+            """
+            SELECT id, recommended_items, recommended_style, created_at
+            FROM recommendations
+            WHERE user_id = ?
+            ORDER BY datetime(created_at) DESC, id DESC
+            LIMIT 5
+            """,
+            (user_id,),
+        ).fetchall()
+
+    def parse_items(value: str) -> list[dict[str, Any]]:
+        try:
+            parsed = json.loads(value)
+            return parsed if isinstance(parsed, list) else []
+        except json.JSONDecodeError:
+            return []
+
+    return {
+        "user": _row_to_user(user),
+        "latest_personal_color": dict(personal) if personal else None,
+        "latest_skeleton_type": dict(skeleton) if skeleton else None,
+        "latest_body_shape": dict(body_shape) if body_shape else None,
+        "body_type_results": [dict(row) for row in legacy_body_results],
+        "recommendations": [
+            {
+                "id": row["id"],
+                "recommended_style": row["recommended_style"],
+                "recommended_items": parse_items(row["recommended_items"])[:8],
+                "created_at": row["created_at"],
+            }
+            for row in recommendations
+        ],
+    }

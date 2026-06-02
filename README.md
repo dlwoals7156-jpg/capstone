@@ -1,6 +1,6 @@
 # DeepLook Capstone
 
-AI 기반 퍼스널컬러 + 골격체형 + 얼굴형 분석 및 패션/뷰티 추천 웹 서비스입니다.  
+AI 기반 퍼스널컬러 + 골격체형 분석 및 패션/뷰티 추천 웹 서비스입니다.  
 프로젝트는 유지보수와 AWS 배포를 고려해 `frontend`, `backend`, `ai_model`로 역할을 분리했습니다.
 
 ## 프로젝트 구조
@@ -26,7 +26,6 @@ capstone-main/
 ├── ai_model/                 # AI 분석 모듈 분리 영역
 │   ├── personal_color/
 │   ├── body_type/
-│   ├── face_shape/
 │   └── recommendation/
 │
 ├── docs/                     # 발표/설계 문서
@@ -42,14 +41,13 @@ capstone-main/
 - 카메라 촬영 기반 퍼스널컬러 분석 화면
 - 퍼스널컬러 자가진단 화면
 - 골격체형 분석 화면
-- 얼굴형 분석 화면
 - 로그인 및 회원가입 화면
 - 자체 상품 DB 기반 추천 결과 화면
 - FastAPI REST API
 - 회원가입/로그인 API
 - JWT 토큰 발급
 - 사용자 정보 저장 API
-- 퍼스널컬러, 골격체형, 얼굴형 결과 저장 API
+- 퍼스널컬러, 골격체형 결과 저장 API
 - 추천 결과 제공 API
 - AI 모델 연동용 `/ai/*` 엔드포인트
 
@@ -131,16 +129,19 @@ pnpm backend:dev
 
 ```text
 POST /auth/signup                회원가입
+GET  /auth/check-email           이메일 중복 확인
 POST /auth/login                 로그인 및 JWT 발급
+GET  /users/me                   현재 로그인 사용자 조회
+GET  /users/me/dashboard         마이페이지 분석/추천 이력 조회
 PUT  /users/{user_id}            사용자 정보 수정
 POST /analysis/personal-color    퍼스널컬러 결과 저장
-POST /analysis/body-type         골격체형 결과 저장
-POST /analysis/face-shape        얼굴형 결과 저장
+POST /analysis/skeleton-type     골격 분석 결과 저장
+POST /analysis/body-shape        체형 분석 결과 저장
+POST /analysis/body-type         기존 호환용 골격체형 결과 저장
 POST /recommendations            추천 결과 제공
 POST /recommend                  기존 프론트 호환용 추천 API
 POST /ai/personal-color          AI 퍼스널컬러 모델 연동 지점
 POST /ai/body-type               AI 골격체형 모델 연동 지점
-POST /ai/face-shape              AI 얼굴형 모델 연동 지점
 ```
 
 ## 데이터베이스
@@ -156,13 +157,21 @@ backend/database/app.db
 - `users`
 - `personal_color_results`
 - `body_type_results`
-- `face_shape_results`
+- `skeleton_type_results`
+- `body_shape_results`
+- `analysis_results`
 - `recommendations`
 
 상품 추천용 샘플 DB SQL은 아래 파일에 있습니다.
 
 ```text
 backend/database/deeplook_product_database.sql
+```
+
+추천 API는 런타임에서 SQL 문자열을 직접 파싱하지 않고, 아래 JSON 카탈로그를 우선 사용합니다. SQL 파일은 MySQL 테이블 생성과 샘플 데이터 설명용으로 유지합니다.
+
+```text
+backend/database/product_catalog.json
 ```
 
 ## AI 모델 폴더 역할
@@ -172,11 +181,14 @@ backend/database/deeplook_product_database.sql
 ```text
 ai_model/personal_color/analyzer.py
 ai_model/body_type/analyzer.py
-ai_model/face_shape/analyzer.py
 ai_model/recommendation/recommender.py
 ```
 
-현재는 캡스톤 시연용 placeholder 로직이며, 추후 이미지 분석 모델이나 추천 모델을 이 파일들에 연결하면 됩니다.
+퍼스널컬러 분석은 현재 카메라 이미지의 피부 영역 RGB/HSV/LAB 계산값을 사용합니다. 골격 분석은 설문 응답과 신체 특징을 점수화하는 규칙 기반 엔진입니다. 추후 실제 자세/신체 비율 모델을 이 폴더에 연결하면 됩니다.
+
+## 인증 보안 메모
+
+현재 캡스톤 시연 버전에서는 JWT를 LocalStorage에 저장하고 있으며, 실제 서비스 운영 시에는 HttpOnly Cookie 기반 인증 방식으로 전환할 예정입니다. Production 환경에서는 `JWT_SECRET` 또는 `JWT_SECRET_KEY`가 설정되지 않으면 서버가 실행되지 않도록 보호합니다.
 
 ## AWS 배포를 위한 구조 메모
 

@@ -11,7 +11,6 @@ export function CrossNavButtons({ current, onNavigate }: CrossNavButtonsProps) {
     { page: "personal-color", label: "퍼스널 컬러 진단" },
     { page: "skeleton", label: "골격 체형 진단" },
     { page: "body-shape", label: "몸 체형 진단" },
-    { page: "face-shape", label: "얼굴형 진단" },
   ];
 
   return (

@@ -1,1 +1,0 @@
-"""Face shape analysis package."""

@@ -1,14 +1,11 @@
 import {
   AISkinAnalysis,
-  BodyFeatureLevel,
-  BodyRatioLevel,
   PCQuestion,
   PCResult,
   PersonalColorTypeKey,
   SkeletonQuestion,
   StylePreference,
   UserProfile,
-  WearingPurpose,
 } from "../types";
 
 export const ITEMS_DB: Record<string, string[]> = {
@@ -400,39 +397,9 @@ export const STYLE_OPTIONS: { value: StylePreference; label: string }[] = [
   { value: "luxury", label: "럭셔리" },
 ];
 
-export const PURPOSE_OPTIONS: { value: WearingPurpose; label: string }[] = [
-  { value: "daily", label: "데일리" },
-  { value: "school", label: "학교" },
-  { value: "work", label: "직장" },
-  { value: "date", label: "데이트" },
-  { value: "travel", label: "여행" },
-  { value: "exercise", label: "운동" },
-  { value: "interview", label: "면접" },
-  { value: "wedding", label: "결혼식" },
-  { value: "party", label: "파티" },
-];
-
-export const BODY_FEATURE_LABELS: Record<BodyFeatureLevel, string> = {
-  low: "좁음",
-  medium: "보통",
-  high: "넓음",
-};
-
-export const BODY_RATIO_LABELS: Record<BodyRatioLevel, string> = {
-  short: "짧은 편",
-  balanced: "균형",
-  long: "긴 편",
-};
-
 export const DEFAULT_USER_PROFILE: UserProfile = {
   gender: "female",
   height: "",
   weight: "",
-  shoulderWidth: "medium",
-  waistLine: "medium",
-  hipWidth: "medium",
-  legRatio: "balanced",
-  upperLowerRatio: "balanced",
   stylePreferences: ["minimal", "casual"],
-  wearingPurposes: ["daily"],
 };

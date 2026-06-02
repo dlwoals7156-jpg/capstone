@@ -19,9 +19,10 @@ import { BackButton } from "../components/BackButton";
 import { CrossNavButtons } from "../components/CrossNavButtons";
 import { PageHeader } from "../components/PageHeader";
 import { ResultTips } from "../components/ResultTips";
+import { analyzePersonalColorWithBackend } from "../services/personalColorService";
 
 interface PersonalColorPageProps {
-  onComplete: (color: string) => void;
+  onComplete: (color: string, analysis?: AISkinAnalysis) => void;
   onNavigate: (page: Page) => void;
 }
 
@@ -106,10 +107,16 @@ export function PersonalColorPage({ onComplete, onNavigate }: PersonalColorPageP
   };
 
   const analyzeDataUrl = async (dataUrl: string) => {
-    const analysis = await analyzeImageForPersonalColor(dataUrl);
+    const clientAnalysis = await analyzeImageForPersonalColor(dataUrl);
+    let analysis = clientAnalysis;
+    try {
+      analysis = await analyzePersonalColorWithBackend(dataUrl, clientAnalysis, frameAnalysis);
+    } catch (error) {
+      console.warn("백엔드 퍼스널컬러 분석 실패, 브라우저 분석 결과를 사용합니다.", error);
+    }
     setSkinAnalysis(analysis);
     setPcResult(analysis.result);
-    onComplete(analysis.resultName);
+    onComplete(analysis.resultName, analysis);
     setPcMode("result");
   };
 

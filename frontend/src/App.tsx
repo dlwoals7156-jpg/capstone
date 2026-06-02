@@ -1,28 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { Page, UserProfile } from "./types";
-import { DEFAULT_USER_PROFILE, PURPOSE_OPTIONS, STYLE_OPTIONS } from "./constants/data";
+import { AISkinAnalysis, AuthUser, BodyShapeResult, CameraQualitySnapshot, Page, RecommendationProduct, SkeletonResult, UserProfile } from "./types";
+import { DEFAULT_USER_PROFILE, STYLE_OPTIONS } from "./constants/data";
 import { BodyShapePage } from "../pages/BodyShapePage";
-import { FaceShapePage } from "../pages/FaceShapePage";
 import { LoginPage } from "../pages/LoginPage";
 import { MainPage } from "../pages/MainPage";
+import { MyPage } from "../pages/MyPage";
 import { PageAbout } from "../pages/PageAbout";
 import { PersonalColorPage } from "../pages/PersonalColorPage";
 import { SignupPage } from "../pages/SignupPage";
 import { SkeletonPage } from "../pages/SkeletonPage";
+import { saveBodyShapeResult, savePersonalColorResult, saveSkeletonTypeResult } from "../services/analysisService";
+import { getAccessToken, getCurrentUser, getStoredUser, logout } from "../services/authService";
 import { fetchRecommendations } from "../services/recommendationService";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("main");
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(() => getStoredUser());
 
   // ─── Profile states ───
   const [selectedColor, setSelectedColor] = useState<string>("봄 라이트");
   const [selectedSkeleton, setSelectedSkeleton] = useState<string>("스트레이트");
   const [selectedBody, setSelectedBody] = useState<string>("모래시계");
   const [userProfile, setUserProfile] = useState<UserProfile>(DEFAULT_USER_PROFILE);
+  const [cameraQuality, setCameraQuality] = useState<CameraQualitySnapshot>({});
 
   // ─── Recommendation states ───
-  const [backendItems, setBackendItems] = useState<any[]>([]);
+  const [backendItems, setBackendItems] = useState<RecommendationProduct[]>([]);
   const [aiGuidance, setAiGuidance] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);   // Loading spinner status
   const [isSearched, setIsSearched] = useState<boolean>(false); // Whether a search was executed
@@ -30,22 +34,26 @@ export default function App() {
   const styleLabels = userProfile.stylePreferences
     .map((value) => STYLE_OPTIONS.find((item) => item.value === value)?.label)
     .filter(Boolean);
-  const purposeLabels = userProfile.wearingPurposes
-    .map((value) => PURPOSE_OPTIONS.find((item) => item.value === value)?.label)
-    .filter(Boolean);
+
+  useEffect(() => {
+    if (!getAccessToken()) return;
+    void getCurrentUser()
+      .then((user) => setCurrentUser(user))
+      .catch(() => {
+        logout();
+        setCurrentUser(null);
+      });
+  }, []);
 
   const buildExplainableGuidance = (queryText: string) => {
     const genderLabel = userProfile.gender === "female" ? "여성" : "남성";
     const heightText = userProfile.height ? `${userProfile.height}cm` : "키 미입력";
     const weightText = userProfile.weight ? `${userProfile.weight}kg` : "몸무게 미입력";
     const styles = styleLabels.length ? styleLabels.join(", ") : "선호 스타일 미선택";
-    const purposes = purposeLabels.length ? purposeLabels.join(", ") : "착용 목적 미선택";
 
     return [
-      `"${queryText || "맞춤 아이템"}"에 가까운 상품을 ${Math.round(
-        76 + Math.min(styleLabels.length + purposeLabels.length, 6) * 2,
-      )}% 매칭도로 골랐어요.`,
-      `함께 본 정보: ${genderLabel}, ${heightText}/${weightText}, ${selectedColor}, ${selectedSkeleton}, ${selectedBody}, ${styles}, ${purposes}.`,
+      `"${queryText || "맞춤 아이템"}" 요청을 자체 상품 DB와 백엔드 추천 점수로 매칭했어요.`,
+      `함께 본 정보: ${genderLabel}, ${heightText}/${weightText}, ${selectedColor}, ${selectedSkeleton}, ${selectedBody}, ${styles}.`,
       `잘 맞는 지점: 얼굴 가까이 오는 색은 퍼스널컬러를, 실루엣은 골격과 체형 보완을 우선해서 봤어요.`,
       `체크 포인트: 같은 색상명이라도 소재와 조명에 따라 인상이 달라질 수 있어요.`,
     ].join("\n");
@@ -65,6 +73,7 @@ export default function App() {
         selectedSkeleton,
         selectedBody,
         userProfile,
+        cameraQuality,
       });
 
       if (response) {
@@ -73,10 +82,14 @@ export default function App() {
         const catalogNote = response.catalog_size
           ? `\n\n자체 상품 DB ${response.catalog_size}개를 기준으로 매칭했습니다.`
           : "";
+        const confidenceNote =
+          typeof aiInfo?.match_confidence === "number"
+            ? `\n백엔드 추천 신뢰도: ${aiInfo.match_confidence}%`
+            : "";
         setAiGuidance(
           aiInfo?.reason
-            ? `${buildExplainableGuidance(queryText)}\n\n${aiInfo.reason}${catalogNote}`
-            : `${buildExplainableGuidance(queryText)}${catalogNote}`,
+            ? `${buildExplainableGuidance(queryText)}${confidenceNote}\n\n${aiInfo.reason}${catalogNote}`
+            : `${buildExplainableGuidance(queryText)}${confidenceNote}${catalogNote}`,
         );
       }
     } catch (error) {
@@ -91,21 +104,65 @@ export default function App() {
   };
 
   const handleNavigate = (page: Page) => {
+    if (page === "mypage" && !currentUser) {
+      setCurrentPage("login");
+      setIsSearched(false);
+      return;
+    }
     setCurrentPage(page);
     setIsSearched(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setCurrentUser(null);
+    handleNavigate("main");
+  };
+
+  const splitPersonalColorLabel = (color: string) => {
+    const [season = color, tone = ""] = color.split(/\s+/);
+    return { season, tone };
+  };
+
+  const handlePersonalColorComplete = (color: string, analysis?: AISkinAnalysis) => {
+    const fallback = splitPersonalColorLabel(color);
+    setSelectedColor(color);
+    if (analysis) {
+      setCameraQuality({
+        confidence: analysis.confidence,
+        qualityLabel: analysis.qualityLabel,
+        warnings: analysis.warnings,
+        metrics: analysis.metrics,
+        cameraFrame: analysis.cameraFrame,
+      });
+    }
+    void savePersonalColorResult({
+      result_name: color,
+      season: analysis?.result.season || fallback.season,
+      tone: analysis?.detailTone || fallback.tone,
+      confidence: analysis?.confidence || 0.74,
+    });
+  };
+
+  const handleSkeletonComplete = (skeleton: string, result?: SkeletonResult) => {
+    setSelectedSkeleton(skeleton);
+    void saveSkeletonTypeResult({
+      result_name: skeleton,
+      confidence: result?.confidence || 0.72,
+    });
+  };
+
+  const handleBodyComplete = (body: string, result?: BodyShapeResult) => {
+    setSelectedBody(body);
+    void saveBodyShapeResult({
+      result_name: body,
+      confidence: result?.confidence || 0.72,
+    });
   };
 
   // ─── Render Page Router ───
   if (currentPage === "about") {
     return <PageAbout onBack={() => handleNavigate("main")} />;
-  }
-
-  if (currentPage === "login") {
-    return <LoginPage onNavigate={handleNavigate} />;
-  }
-
-  if (currentPage === "signup") {
-    return <SignupPage onNavigate={handleNavigate} />;
   }
 
   return (
@@ -129,10 +186,26 @@ export default function App() {
             AI Fashion Tech Lab
           </span>
         </div>
-        <nav className="flex items-center gap-5 sm:gap-8 text-[11px] tracking-[0.15em] uppercase text-black/50">
-          <button onClick={() => setCurrentPage("login")} className="hover:text-black transition-colors duration-200">
-            Login
-          </button>
+        <nav className="flex items-center gap-4 sm:gap-8 text-[11px] tracking-[0.15em] uppercase text-black/50">
+          {currentUser ? (
+            <>
+              <button onClick={() => handleNavigate("mypage")} className="hover:text-black transition-colors duration-200">
+                My Page
+              </button>
+              <button onClick={handleLogout} className="hover:text-black transition-colors duration-200">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <button onClick={() => handleNavigate("login")} className="hover:text-black transition-colors duration-200">
+                Login
+              </button>
+              <button onClick={() => handleNavigate("signup")} className="hover:text-black transition-colors duration-200">
+                Sign Up
+              </button>
+            </>
+          )}
           <button onClick={() => setCurrentPage("about")} className="hover:text-black transition-colors duration-200">
             About
           </button>
@@ -148,6 +221,17 @@ export default function App() {
       </header>
 
       <main className="max-w-7xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
+        {currentPage === "login" && (
+          <LoginPage
+            onNavigate={handleNavigate}
+            onLogin={(user) => setCurrentUser(user)}
+          />
+        )}
+
+        {currentPage === "signup" && <SignupPage onNavigate={handleNavigate} />}
+
+        {currentPage === "mypage" && <MyPage onNavigate={handleNavigate} />}
+
         {currentPage === "main" && (
           <MainPage
             selectedColor={selectedColor}
@@ -170,26 +254,24 @@ export default function App() {
 
         {currentPage === "personal-color" && (
           <PersonalColorPage
-            onComplete={(color) => setSelectedColor(color)}
+            onComplete={handlePersonalColorComplete}
             onNavigate={handleNavigate}
           />
         )}
 
         {currentPage === "skeleton" && (
           <SkeletonPage
-            onComplete={(skeleton) => setSelectedSkeleton(skeleton)}
+            onComplete={handleSkeletonComplete}
             onNavigate={handleNavigate}
           />
         )}
 
         {currentPage === "body-shape" && (
           <BodyShapePage
-            onComplete={(body) => setSelectedBody(body)}
+            onComplete={handleBodyComplete}
             onNavigate={handleNavigate}
           />
         )}
-
-        {currentPage === "face-shape" && <FaceShapePage onNavigate={handleNavigate} />}
       </main>
 
       {/* Global Minimalist Footer */}

@@ -1,20 +1,32 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { Page } from "../src/types";
+import { AuthUser, Page } from "../src/types";
 import { login } from "../services/authService";
 
 interface LoginPageProps {
   onNavigate: (page: Page) => void;
+  onLogin: (user: AuthUser) => void;
 }
 
-export function LoginPage({ onNavigate }: LoginPageProps) {
+export function LoginPage({ onNavigate, onLogin }: LoginPageProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
   const handleSubmit = async () => {
+    if (!isValidEmail(email)) {
+      setMessage("올바른 이메일 형식으로 입력해 주세요.");
+      return;
+    }
+    if (!password.trim()) {
+      setMessage("비밀번호를 입력해 주세요.");
+      return;
+    }
     try {
-      await login({ email, password });
+      const response = await login({ email, password });
+      onLogin(response.user);
       setMessage("로그인 완료. 이제 분석 결과를 저장할 수 있어요.");
       onNavigate("main");
     } catch {

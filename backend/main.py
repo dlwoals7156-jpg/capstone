@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.app.config import ALLOWED_ORIGINS
 from backend.database.session import init_database
 from backend.routes import ai, analysis, auth, recommendations, users
 
@@ -11,7 +12,7 @@ app = FastAPI(title="Deeplook API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

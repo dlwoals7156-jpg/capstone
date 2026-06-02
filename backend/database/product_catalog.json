@@ -1,0 +1,3878 @@
+[
+  {
+    "id": "fashion-1",
+    "product_type": "fashion",
+    "product_name": "블랙 슬림핏 슬랙스",
+    "brand_name": "Nero Studio",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "slacks",
+    "color_group": "black",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "office",
+      "interview"
+    ],
+    "price": 59000,
+    "image_url": "/images/fashion/f001.jpg",
+    "product_url": "/products/fashion-1",
+    "recommendation_reason": "겨울 딥의 선명한 대비감과 잘 맞고 스트레이트 골격의 직선적인 실루엣을 살립니다.",
+    "search_text": "블랙 슬림핏 슬랙스 nero studio unisex bottom slacks slim 블랙 black winter_deep,winter_bright,winter_true straight,rectangle minimal,chic,modern all date,office,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-2",
+    "product_type": "fashion",
+    "product_name": "딥 네이비 테일러드 자켓",
+    "brand_name": "Line Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "tailored_jacket",
+    "color_group": "navy",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "inverted_triangle"
+    ],
+    "style_tag": [
+      "chic",
+      "modern",
+      "minimal"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "interview"
+    ],
+    "price": 129000,
+    "image_url": "/images/fashion/f002.jpg",
+    "product_url": "/products/fashion-2",
+    "recommendation_reason": "차가운 네이비가 겨울 타입의 대비감을 살리고 어깨선을 정돈해 격식 있는 상황에 좋습니다.",
+    "search_text": "딥 네이비 테일러드 자켓 line archive unisex outer tailored_jacket structured 딥 네이비 navy winter_deep,winter_true straight,inverted_triangle chic,modern,minimal fall,winter office,date,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-3",
+    "product_type": "fashion",
+    "product_name": "아이보리 린넨 셔츠",
+    "brand_name": "Serein Wear",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "linen_shirt",
+    "color_group": "ivory",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "minimal",
+      "casual",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 43000,
+    "image_url": "/images/fashion/f003.jpg",
+    "product_url": "/products/fashion-3",
+    "recommendation_reason": "밝은 아이보리가 라이트 톤을 부드럽게 밝혀 주고 가벼운 소재가 웨이브 체형에 자연스럽습니다.",
+    "search_text": "아이보리 린넨 셔츠 serein wear unisex top linen_shirt regular 아이보리 ivory spring_light,summer_light wave,hourglass minimal,casual,natural spring,summer daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-4",
+    "product_type": "fashion",
+    "product_name": "피치 코튼 가디건",
+    "brand_name": "Lumiere Lane",
+    "gender_target": [
+      "female"
+    ],
+    "category": "outer",
+    "sub_category": "cardigan",
+    "color_group": "coral",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright"
+    ],
+    "body_type": [
+      "wave",
+      "pear"
+    ],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "casual"
+    ],
+    "season": [
+      "spring"
+    ],
+    "situation": [
+      "date",
+      "campus",
+      "daily"
+    ],
+    "price": 52000,
+    "image_url": "/images/fashion/f004.jpg",
+    "product_url": "/products/fashion-4",
+    "recommendation_reason": "피치 컬러가 봄 타입의 생기를 살리고 짧은 기장이 하체 비율을 보완합니다.",
+    "search_text": "피치 코튼 가디건 lumiere lane female outer cardigan cropped 피치 coral spring_light,spring_bright wave,pear lovely,feminine,casual spring date,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-5",
+    "product_type": "fashion",
+    "product_name": "세이지 플리츠 스커트",
+    "brand_name": "Dew Closet",
+    "gender_target": [
+      "female"
+    ],
+    "category": "bottom",
+    "sub_category": "pleated_skirt",
+    "color_group": "green",
+    "personal_color_type": [
+      "summer_mute",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "pear",
+      "hourglass"
+    ],
+    "style_tag": [
+      "feminine",
+      "elegant",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "campus"
+    ],
+    "price": 62000,
+    "image_url": "/images/fashion/f005.jpg",
+    "product_url": "/products/fashion-5",
+    "recommendation_reason": "차분한 세이지 톤이 여름 뮤트에 어울리고 플리츠 라인이 골반과 허리선을 부드럽게 보완합니다.",
+    "search_text": "세이지 플리츠 스커트 dew closet female bottom pleated_skirt a_line 세이지 green summer_mute,summer_light wave,pear,hourglass feminine,elegant,natural spring,summer date,wedding_guest,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-6",
+    "product_type": "fashion",
+    "product_name": "카멜 와이드 팬츠",
+    "brand_name": "Mellow Form",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "wide_pants",
+    "color_group": "brown",
+    "personal_color_type": [
+      "autumn_true",
+      "autumn_mute"
+    ],
+    "body_type": [
+      "natural",
+      "pear",
+      "rectangle"
+    ],
+    "style_tag": [
+      "casual",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "fall"
+    ],
+    "situation": [
+      "daily",
+      "travel",
+      "campus"
+    ],
+    "price": 69000,
+    "image_url": "/images/fashion/f006.jpg",
+    "product_url": "/products/fashion-6",
+    "recommendation_reason": "따뜻한 카멜이 가을 톤과 잘 맞고 와이드 핏이 내추럴 골격의 여유 있는 무드를 살립니다.",
+    "search_text": "카멜 와이드 팬츠 mellow form unisex bottom wide_pants wide 카멜 brown autumn_true,autumn_mute natural,pear,rectangle casual,natural,modern fall daily,travel,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-7",
+    "product_type": "fashion",
+    "product_name": "올리브 유틸리티 자켓",
+    "brand_name": "Urban Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "utility_jacket",
+    "color_group": "khaki",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [
+      "natural",
+      "inverted_triangle"
+    ],
+    "style_tag": [
+      "street",
+      "casual",
+      "natural"
+    ],
+    "season": [
+      "fall"
+    ],
+    "situation": [
+      "travel",
+      "daily",
+      "campus"
+    ],
+    "price": 98000,
+    "image_url": "/images/fashion/f007.jpg",
+    "product_url": "/products/fashion-7",
+    "recommendation_reason": "올리브 컬러와 실용적인 포켓 디테일이 가을 뮤트와 내추럴 골격에 안정적으로 어울립니다.",
+    "search_text": "올리브 유틸리티 자켓 urban veil unisex outer utility_jacket loose 올리브 khaki autumn_mute,autumn_true natural,inverted_triangle street,casual,natural fall travel,daily,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-8",
+    "product_type": "fashion",
+    "product_name": "로즈 베이지 랩 원피스",
+    "brand_name": "Aube Label",
+    "gender_target": [
+      "female"
+    ],
+    "category": "dress",
+    "sub_category": "wrap_dress",
+    "color_group": "pink",
+    "personal_color_type": [
+      "summer_light",
+      "summer_mute"
+    ],
+    "body_type": [
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "feminine",
+      "elegant",
+      "lovely"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest"
+    ],
+    "price": 89000,
+    "image_url": "/images/fashion/f008.jpg",
+    "product_url": "/products/fashion-8",
+    "recommendation_reason": "부드러운 로즈 베이지가 쿨 라이트 피부를 맑게 보이고 랩 디자인이 허리 라인을 강조합니다.",
+    "search_text": "로즈 베이지 랩 원피스 aube label female dress wrap_dress a_line 로즈 베이지 pink summer_light,summer_mute wave,hourglass feminine,elegant,lovely spring,summer date,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "fashion-9",
+    "product_type": "fashion",
+    "product_name": "크림 스트레이트 데님",
+    "brand_name": "Soft Frame",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "denim",
+    "color_group": "ivory",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "straight",
+      "rectangle"
+    ],
+    "style_tag": [
+      "casual",
+      "minimal",
+      "modern"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 54000,
+    "image_url": "/images/fashion/f009.jpg",
+    "product_url": "/products/fashion-9",
+    "recommendation_reason": "밝은 크림 컬러가 라이트 톤에 잘 맞고 일자핏이 체형을 깔끔하게 정돈합니다.",
+    "search_text": "크림 스트레이트 데님 soft frame unisex bottom denim straight 크림 ivory spring_light,summer_light straight,rectangle casual,minimal,modern spring,summer daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-10",
+    "product_type": "fashion",
+    "product_name": "차콜 니트 베스트",
+    "brand_name": "Noir Habit",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "knit_vest",
+    "color_group": "gray",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true",
+      "summer_mute"
+    ],
+    "body_type": [
+      "straight",
+      "natural"
+    ],
+    "style_tag": [
+      "chic",
+      "minimal",
+      "dandy"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "date"
+    ],
+    "price": 49000,
+    "image_url": "/images/fashion/f010.jpg",
+    "product_url": "/products/fashion-10",
+    "recommendation_reason": "차콜 컬러가 쿨하고 깊은 톤에 어울리며 레이어드 시 상체 라인을 단정하게 보입니다.",
+    "search_text": "차콜 니트 베스트 noir habit unisex top knit_vest regular 차콜 gray winter_deep,winter_true,summer_mute straight,natural chic,minimal,dandy fall,winter office,campus,date fashion 패션 상품"
+  },
+  {
+    "id": "fashion-11",
+    "product_type": "fashion",
+    "product_name": "라이트 블루 옥스포드 셔츠",
+    "brand_name": "Mode Atelier",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "oxford_shirt",
+    "color_group": "blue",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright",
+      "spring_light"
+    ],
+    "body_type": [
+      "straight",
+      "wave"
+    ],
+    "style_tag": [
+      "minimal",
+      "classic",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "daily"
+    ],
+    "price": 46000,
+    "image_url": "/images/fashion/f011.jpg",
+    "product_url": "/products/fashion-11",
+    "recommendation_reason": "맑은 블루가 여름 라이트의 청량감을 살리고 셔츠 구조가 데일리 추천에 안정적입니다.",
+    "search_text": "라이트 블루 옥스포드 셔츠 mode atelier unisex top oxford_shirt regular 라이트 블루 blue summer_light,summer_bright,spring_light straight,wave minimal,classic,casual spring,summer office,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-12",
+    "product_type": "fashion",
+    "product_name": "브릭 레더 벨트",
+    "brand_name": "Line Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "accessory",
+    "sub_category": "belt",
+    "color_group": "brown",
+    "personal_color_type": [
+      "autumn_deep",
+      "autumn_true"
+    ],
+    "body_type": [
+      "straight",
+      "natural"
+    ],
+    "style_tag": [
+      "classic",
+      "chic",
+      "dandy"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "daily"
+    ],
+    "price": 35000,
+    "image_url": "/images/fashion/f012.jpg",
+    "product_url": "/products/fashion-12",
+    "recommendation_reason": "브릭 브라운이 가을 딥의 깊이감과 맞고 허리선을 잡아 비율 보완에 도움이 됩니다.",
+    "search_text": "브릭 레더 벨트 line archive unisex accessory belt structured 브릭 브라운 brown autumn_deep,autumn_true straight,natural classic,chic,dandy fall,winter office,date,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-13",
+    "product_type": "fashion",
+    "product_name": "퓨어 화이트 크롭 자켓",
+    "brand_name": "Vivid Yard",
+    "gender_target": [
+      "female"
+    ],
+    "category": "outer",
+    "sub_category": "cropped_jacket",
+    "color_group": "white",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "modern",
+      "feminine"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 118000,
+    "image_url": "/images/fashion/f013.jpg",
+    "product_url": "/products/fashion-13",
+    "recommendation_reason": "순백 컬러가 겨울 브라이트의 선명함을 살리고 크롭 기장이 허리 위치를 높여 보입니다.",
+    "search_text": "퓨어 화이트 크롭 자켓 vivid yard female outer cropped_jacket cropped 퓨어 화이트 white winter_bright,winter_true straight,wave,hourglass chic,modern,feminine spring,fall date,party,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "fashion-14",
+    "product_type": "fashion",
+    "product_name": "모카 리브 니트",
+    "brand_name": "Mellow Form",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "rib_knit",
+    "color_group": "brown",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [
+      "straight",
+      "wave"
+    ],
+    "style_tag": [
+      "natural",
+      "casual",
+      "minimal"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "office"
+    ],
+    "price": 47000,
+    "image_url": "/images/fashion/f014.jpg",
+    "product_url": "/products/fashion-14",
+    "recommendation_reason": "부드러운 모카 색이 가을 뮤트 피부와 자연스럽고 리브 조직이 상체 실루엣을 정리합니다.",
+    "search_text": "모카 리브 니트 mellow form unisex top rib_knit slim 모카 brown autumn_mute,autumn_true straight,wave natural,casual,minimal fall,winter daily,campus,office fashion 패션 상품"
+  },
+  {
+    "id": "fashion-15",
+    "product_type": "fashion",
+    "product_name": "라벤더 시어 블라우스",
+    "brand_name": "Dew Closet",
+    "gender_target": [
+      "female"
+    ],
+    "category": "top",
+    "sub_category": "blouse",
+    "color_group": "purple",
+    "personal_color_type": [
+      "summer_light",
+      "summer_mute"
+    ],
+    "body_type": [
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "feminine",
+      "lovely",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "campus"
+    ],
+    "price": 58000,
+    "image_url": "/images/fashion/f015.jpg",
+    "product_url": "/products/fashion-15",
+    "recommendation_reason": "라벤더 컬러가 여름 타입의 쿨한 투명감을 살리고 부드러운 소재가 웨이브 골격에 좋습니다.",
+    "search_text": "라벤더 시어 블라우스 dew closet female top blouse regular 라벤더 purple summer_light,summer_mute wave,hourglass feminine,lovely,elegant spring,summer date,wedding_guest,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-16",
+    "product_type": "fashion",
+    "product_name": "로열 블루 미니 원피스",
+    "brand_name": "Nero Studio",
+    "gender_target": [
+      "female"
+    ],
+    "category": "dress",
+    "sub_category": "mini_dress",
+    "color_group": "blue",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 94000,
+    "image_url": "/images/fashion/f016.jpg",
+    "product_url": "/products/fashion-16",
+    "recommendation_reason": "선명한 로열 블루가 겨울 브라이트의 대비감을 강화하고 구조적인 핏이 라인을 잡아 줍니다.",
+    "search_text": "로열 블루 미니 원피스 nero studio female dress mini_dress structured 로열 블루 blue winter_bright,winter_true straight,hourglass chic,elegant,modern all date,party fashion 패션 상품"
+  },
+  {
+    "id": "fashion-17",
+    "product_type": "fashion",
+    "product_name": "블랙 앵클 부츠",
+    "brand_name": "Noir Habit",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "shoes",
+    "sub_category": "ankle_boots",
+    "color_group": "black",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true",
+      "autumn_deep"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "rectangle"
+    ],
+    "style_tag": [
+      "chic",
+      "modern",
+      "street"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "daily"
+    ],
+    "price": 109000,
+    "image_url": "/images/fashion/f017.jpg",
+    "product_url": "/products/fashion-17",
+    "recommendation_reason": "딥 톤 컬러 팔레트와 쉽게 매칭되고 직선적인 라스트가 스타일을 세련되게 마무리합니다.",
+    "search_text": "블랙 앵클 부츠 noir habit unisex shoes ankle_boots structured 블랙 black winter_deep,winter_true,autumn_deep straight,natural,rectangle chic,modern,street fall,winter date,party,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-18",
+    "product_type": "fashion",
+    "product_name": "샌드 베이지 로퍼",
+    "brand_name": "Mode Atelier",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "shoes",
+    "sub_category": "loafer",
+    "color_group": "beige",
+    "personal_color_type": [
+      "spring_light",
+      "autumn_mute"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "natural"
+    ],
+    "style_tag": [
+      "minimal",
+      "classic",
+      "dandy"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "daily"
+    ],
+    "price": 85000,
+    "image_url": "/images/fashion/f018.jpg",
+    "product_url": "/products/fashion-18",
+    "recommendation_reason": "차분한 베이지가 웜 라이트와 뮤트 톤에 자연스럽고 단정한 착장에 활용도가 높습니다.",
+    "search_text": "샌드 베이지 로퍼 mode atelier unisex shoes loafer structured 샌드 베이지 beige spring_light,autumn_mute straight,wave,natural minimal,classic,dandy spring,fall office,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-19",
+    "product_type": "fashion",
+    "product_name": "쿨 그레이 토트백",
+    "brand_name": "Line Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bag",
+    "sub_category": "tote_bag",
+    "color_group": "gray",
+    "personal_color_type": [
+      "summer_mute",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "modern",
+      "chic"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "interview"
+    ],
+    "price": 76000,
+    "image_url": "/images/fashion/f019.jpg",
+    "product_url": "/products/fashion-19",
+    "recommendation_reason": "쿨 그레이가 여름 뮤트와 겨울 톤 모두에 어울리고 면접과 직장 룩에 단정합니다.",
+    "search_text": "쿨 그레이 토트백 line archive unisex bag tote_bag structured 쿨 그레이 gray summer_mute,winter_true,winter_deep straight,natural,rectangle minimal,modern,chic all office,campus,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-20",
+    "product_type": "fashion",
+    "product_name": "코랄 니트 탑",
+    "brand_name": "Lumiere Lane",
+    "gender_target": [
+      "female"
+    ],
+    "category": "top",
+    "sub_category": "knit_top",
+    "color_group": "coral",
+    "personal_color_type": [
+      "spring_bright",
+      "spring_light",
+      "spring_true"
+    ],
+    "body_type": [
+      "wave",
+      "hourglass",
+      "pear"
+    ],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "daily",
+      "campus"
+    ],
+    "price": 44000,
+    "image_url": "/images/fashion/f020.jpg",
+    "product_url": "/products/fashion-20",
+    "recommendation_reason": "코랄 컬러가 봄 타입의 생기를 살리고 부드러운 니트가 러블리한 분위기를 만듭니다.",
+    "search_text": "코랄 니트 탑 lumiere lane female top knit_top regular 코랄 coral spring_bright,spring_light,spring_true wave,hourglass,pear lovely,feminine,casual spring,summer date,daily,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-21",
+    "product_type": "fashion",
+    "product_name": "테라코타 미디 스커트",
+    "brand_name": "Aube Label",
+    "gender_target": [
+      "female"
+    ],
+    "category": "bottom",
+    "sub_category": "midi_skirt",
+    "color_group": "orange",
+    "personal_color_type": [
+      "autumn_true",
+      "autumn_deep"
+    ],
+    "body_type": [
+      "pear",
+      "hourglass",
+      "wave"
+    ],
+    "style_tag": [
+      "feminine",
+      "natural",
+      "elegant"
+    ],
+    "season": [
+      "fall"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "daily"
+    ],
+    "price": 67000,
+    "image_url": "/images/fashion/f021.jpg",
+    "product_url": "/products/fashion-21",
+    "recommendation_reason": "따뜻하고 깊은 테라코타가 가을 톤과 조화롭고 A라인이 하체 균형을 보완합니다.",
+    "search_text": "테라코타 미디 스커트 aube label female bottom midi_skirt a_line 테라코타 orange autumn_true,autumn_deep pear,hourglass,wave feminine,natural,elegant fall date,wedding_guest,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-22",
+    "product_type": "fashion",
+    "product_name": "카키 카고 팬츠",
+    "brand_name": "Urban Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "cargo_pants",
+    "color_group": "khaki",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [
+      "natural",
+      "inverted_triangle",
+      "rectangle"
+    ],
+    "style_tag": [
+      "street",
+      "casual",
+      "sporty"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "travel",
+      "daily",
+      "campus"
+    ],
+    "price": 72000,
+    "image_url": "/images/fashion/f022.jpg",
+    "product_url": "/products/fashion-22",
+    "recommendation_reason": "카키와 여유 있는 카고핏이 내추럴 골격과 스트릿 스타일 선호에 잘 맞습니다.",
+    "search_text": "카키 카고 팬츠 urban veil unisex bottom cargo_pants loose 카키 khaki autumn_mute,autumn_true natural,inverted_triangle,rectangle street,casual,sporty spring,fall travel,daily,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-23",
+    "product_type": "fashion",
+    "product_name": "버건디 새틴 블라우스",
+    "brand_name": "Noir Habit",
+    "gender_target": [
+      "female"
+    ],
+    "category": "top",
+    "sub_category": "satin_blouse",
+    "color_group": "burgundy",
+    "personal_color_type": [
+      "winter_deep",
+      "autumn_deep"
+    ],
+    "body_type": [
+      "straight",
+      "hourglass",
+      "wave"
+    ],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "luxury"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 79000,
+    "image_url": "/images/fashion/f023.jpg",
+    "product_url": "/products/fashion-23",
+    "recommendation_reason": "깊은 버건디가 딥 타입의 분위기를 살리고 새틴 광택이 데이트와 파티 룩에 어울립니다.",
+    "search_text": "버건디 새틴 블라우스 noir habit female top satin_blouse regular 버건디 burgundy winter_deep,autumn_deep straight,hourglass,wave chic,elegant,luxury fall,winter date,party,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "fashion-24",
+    "product_type": "fashion",
+    "product_name": "민트 소프트 카디건",
+    "brand_name": "Serein Wear",
+    "gender_target": [
+      "female"
+    ],
+    "category": "outer",
+    "sub_category": "cardigan",
+    "color_group": "green",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "pear"
+    ],
+    "style_tag": [
+      "lovely",
+      "casual",
+      "natural"
+    ],
+    "season": [
+      "spring"
+    ],
+    "situation": [
+      "campus",
+      "daily",
+      "date"
+    ],
+    "price": 51000,
+    "image_url": "/images/fashion/f024.jpg",
+    "product_url": "/products/fashion-24",
+    "recommendation_reason": "맑은 민트가 라이트 톤을 부드럽게 밝히고 과하지 않은 실루엣으로 데일리에 좋습니다.",
+    "search_text": "민트 소프트 카디건 serein wear female outer cardigan regular 민트 green spring_light,summer_light wave,pear lovely,casual,natural spring campus,daily,date fashion 패션 상품"
+  },
+  {
+    "id": "fashion-25",
+    "product_type": "fashion",
+    "product_name": "실버 후프 이어링",
+    "brand_name": "Vivid Yard",
+    "gender_target": [
+      "female"
+    ],
+    "category": "accessory",
+    "sub_category": "earring",
+    "color_group": "silver",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright",
+      "winter_bright",
+      "winter_deep"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "modern",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 29000,
+    "image_url": "/images/fashion/f025.jpg",
+    "product_url": "/products/fashion-25",
+    "recommendation_reason": "차가운 실버 광택이 쿨 톤의 맑은 인상을 살리고 얼굴 주변에 세련된 포인트를 줍니다.",
+    "search_text": "실버 후프 이어링 vivid yard female accessory earring structured 실버 silver summer_light,summer_bright,winter_bright,winter_deep straight,wave,hourglass chic,modern,elegant all date,party,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "fashion-26",
+    "product_type": "fashion",
+    "product_name": "딥 인디고 스트레이트 데님",
+    "brand_name": "Soft Frame",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "denim",
+    "color_group": "navy",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true",
+      "summer_mute"
+    ],
+    "body_type": [
+      "straight",
+      "rectangle",
+      "natural"
+    ],
+    "style_tag": [
+      "casual",
+      "modern",
+      "minimal"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 64000,
+    "image_url": "/images/fashion/f026.jpg",
+    "product_url": null,
+    "recommendation_reason": "딥 인디고가 쿨하고 깊은 톤에 안정적이며 스트레이트 핏이 체형을 깔끔하게 잡아 줍니다.",
+    "search_text": "딥 인디고 스트레이트 데님 soft frame unisex bottom denim straight 딥 인디고 navy winter_deep,winter_true,summer_mute straight,rectangle,natural casual,modern,minimal all daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-27",
+    "product_type": "fashion",
+    "product_name": "버터 옐로우 카디건",
+    "brand_name": "Lumiere Lane",
+    "gender_target": [
+      "female"
+    ],
+    "category": "outer",
+    "sub_category": "cardigan",
+    "color_group": "yellow",
+    "personal_color_type": [
+      "spring_light",
+      "spring_true"
+    ],
+    "body_type": [
+      "wave",
+      "pear",
+      "hourglass"
+    ],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "casual"
+    ],
+    "season": [
+      "spring"
+    ],
+    "situation": [
+      "date",
+      "campus",
+      "daily"
+    ],
+    "price": 53000,
+    "image_url": "/images/fashion/f027.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝고 따뜻한 옐로우가 봄 라이트의 생기를 강조하고 크롭 기장이 비율을 보완합니다.",
+    "search_text": "버터 옐로우 카디건 lumiere lane female outer cardigan cropped 버터 옐로우 yellow spring_light,spring_true wave,pear,hourglass lovely,feminine,casual spring date,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-28",
+    "product_type": "fashion",
+    "product_name": "차콜 롱 코트",
+    "brand_name": "Noir Habit",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "long_coat",
+    "color_group": "gray",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true",
+      "summer_mute"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "winter"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "interview"
+    ],
+    "price": 179000,
+    "image_url": "/images/fashion/f028.jpg",
+    "product_url": null,
+    "recommendation_reason": "차콜 컬러와 긴 직선 실루엣이 겨울 딥과 스트레이트 골격에 강한 장점을 줍니다.",
+    "search_text": "차콜 롱 코트 noir habit unisex outer long_coat straight 차콜 gray winter_deep,winter_true,summer_mute straight,natural,rectangle minimal,chic,modern winter office,date,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-29",
+    "product_type": "fashion",
+    "product_name": "토프 트렌치 코트",
+    "brand_name": "Mode Atelier",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "trench_coat",
+    "color_group": "beige",
+    "personal_color_type": [
+      "summer_mute",
+      "autumn_mute"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "wave"
+    ],
+    "style_tag": [
+      "classic",
+      "modern",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "office",
+      "travel",
+      "date"
+    ],
+    "price": 148000,
+    "image_url": "/images/fashion/f029.jpg",
+    "product_url": null,
+    "recommendation_reason": "토프 컬러가 뮤트 타입에 차분하게 어울리고 트렌치 구조가 격식과 데일리를 모두 커버합니다.",
+    "search_text": "토프 트렌치 코트 mode atelier unisex outer trench_coat regular 토프 beige summer_mute,autumn_mute straight,natural,wave classic,modern,elegant spring,fall office,travel,date fashion 패션 상품"
+  },
+  {
+    "id": "fashion-30",
+    "product_type": "fashion",
+    "product_name": "블랙 미니 숄더백",
+    "brand_name": "Nero Studio",
+    "gender_target": [
+      "female"
+    ],
+    "category": "bag",
+    "sub_category": "shoulder_bag",
+    "color_group": "black",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "minimal",
+      "luxury"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "office"
+    ],
+    "price": 88000,
+    "image_url": "/images/fashion/f030.jpg",
+    "product_url": null,
+    "recommendation_reason": "블랙 포인트가 겨울 타입의 선명한 이미지를 살리고 미니 사이즈가 데이트 룩에 잘 맞습니다.",
+    "search_text": "블랙 미니 숄더백 nero studio female bag shoulder_bag structured 블랙 black winter_deep,winter_bright,winter_true straight,wave,hourglass chic,minimal,luxury all date,party,office fashion 패션 상품"
+  },
+  {
+    "id": "fashion-31",
+    "product_type": "fashion",
+    "product_name": "네이비 H라인 스커트",
+    "brand_name": "Line Archive",
+    "gender_target": [
+      "female"
+    ],
+    "category": "bottom",
+    "sub_category": "h_line_skirt",
+    "color_group": "navy",
+    "personal_color_type": [
+      "summer_mute",
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "hourglass",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "office",
+      "interview",
+      "date"
+    ],
+    "price": 61000,
+    "image_url": "/images/fashion/f031.jpg",
+    "product_url": null,
+    "recommendation_reason": "네이비 H라인은 쿨 톤에 안정적이고 직선 체형의 단정한 인상을 강화합니다.",
+    "search_text": "네이비 h라인 스커트 line archive female bottom h_line_skirt slim 네이비 navy summer_mute,winter_deep,winter_true straight,hourglass,rectangle minimal,chic,elegant all office,interview,date fashion 패션 상품"
+  },
+  {
+    "id": "fashion-32",
+    "product_type": "fashion",
+    "product_name": "더스티 핑크 티셔츠",
+    "brand_name": "Dew Closet",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "t_shirt",
+    "color_group": "pink",
+    "personal_color_type": [
+      "summer_mute",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "pear",
+      "rectangle"
+    ],
+    "style_tag": [
+      "casual",
+      "lovely",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 29000,
+    "image_url": "/images/fashion/f032.jpg",
+    "product_url": null,
+    "recommendation_reason": "더스티 핑크가 여름 뮤트의 부드러운 피부톤과 잘 맞고 편안한 데일리 룩에 적합합니다.",
+    "search_text": "더스티 핑크 티셔츠 dew closet unisex top t_shirt regular 더스티 핑크 pink summer_mute,summer_light wave,pear,rectangle casual,lovely,natural spring,summer daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-33",
+    "product_type": "fashion",
+    "product_name": "아이보리 와이드 슬랙스",
+    "brand_name": "Serein Wear",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "wide_slacks",
+    "color_group": "ivory",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "natural",
+      "pear",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "modern",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "daily"
+    ],
+    "price": 71000,
+    "image_url": "/images/fashion/f033.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝은 아이보리가 라이트 톤에 어울리고 와이드 실루엣이 하체 라인을 자연스럽게 보완합니다.",
+    "search_text": "아이보리 와이드 슬랙스 serein wear unisex bottom wide_slacks wide 아이보리 ivory spring_light,summer_light natural,pear,rectangle minimal,modern,elegant spring,summer office,date,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-34",
+    "product_type": "fashion",
+    "product_name": "초콜릿 셔츠 자켓",
+    "brand_name": "Mellow Form",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "shirt_jacket",
+    "color_group": "brown",
+    "personal_color_type": [
+      "autumn_deep",
+      "autumn_true"
+    ],
+    "body_type": [
+      "natural",
+      "straight",
+      "oval"
+    ],
+    "style_tag": [
+      "natural",
+      "casual",
+      "modern"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "travel",
+      "campus"
+    ],
+    "price": 96000,
+    "image_url": "/images/fashion/f034.jpg",
+    "product_url": null,
+    "recommendation_reason": "초콜릿 브라운이 가을 딥의 깊이감과 어울리고 셔츠 자켓이 편안한 체형 보완을 돕습니다.",
+    "search_text": "초콜릿 셔츠 자켓 mellow form unisex outer shirt_jacket loose 초콜릿 브라운 brown autumn_deep,autumn_true natural,straight,oval natural,casual,modern fall,winter daily,travel,campus fashion 패션 상품"
+  },
+  {
+    "id": "fashion-35",
+    "product_type": "fashion",
+    "product_name": "크림 니트 원피스",
+    "brand_name": "Aube Label",
+    "gender_target": [
+      "female"
+    ],
+    "category": "dress",
+    "sub_category": "knit_dress",
+    "color_group": "ivory",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "hourglass",
+      "pear"
+    ],
+    "style_tag": [
+      "feminine",
+      "lovely",
+      "natural"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "daily",
+      "wedding_guest"
+    ],
+    "price": 87000,
+    "image_url": "/images/fashion/f035.jpg",
+    "product_url": null,
+    "recommendation_reason": "크림 컬러와 부드러운 니트 질감이 라이트 타입과 웨이브 골격에 자연스럽게 어울립니다.",
+    "search_text": "크림 니트 원피스 aube label female dress knit_dress regular 크림 ivory spring_light,summer_light wave,hourglass,pear feminine,lovely,natural fall,winter date,daily,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "fashion-36",
+    "product_type": "fashion",
+    "product_name": "코발트 크롭 셔츠",
+    "brand_name": "Vivid Yard",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "cropped_shirt",
+    "color_group": "blue",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true",
+      "summer_bright"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "rectangle"
+    ],
+    "style_tag": [
+      "street",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "campus",
+      "party"
+    ],
+    "price": 56000,
+    "image_url": "/images/fashion/f036.jpg",
+    "product_url": null,
+    "recommendation_reason": "선명한 코발트가 브라이트 타입의 장점을 살리고 크롭 기장이 상하체 비율을 개선합니다.",
+    "search_text": "코발트 크롭 셔츠 vivid yard unisex top cropped_shirt cropped 코발트 blue winter_bright,winter_true,summer_bright straight,wave,rectangle street,chic,modern spring,summer date,campus,party fashion 패션 상품"
+  },
+  {
+    "id": "fashion-37",
+    "product_type": "fashion",
+    "product_name": "페일 핑크 발레 플랫",
+    "brand_name": "Dew Closet",
+    "gender_target": [
+      "female"
+    ],
+    "category": "shoes",
+    "sub_category": "flat_shoes",
+    "color_group": "pink",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [
+      "wave",
+      "pear",
+      "hourglass"
+    ],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "daily"
+    ],
+    "price": 69000,
+    "image_url": "/images/fashion/f037.jpg",
+    "product_url": null,
+    "recommendation_reason": "은은한 핑크가 라이트 톤에 부드럽고 낮은 굽이 러블리한 착장에 잘 어울립니다.",
+    "search_text": "페일 핑크 발레 플랫 dew closet female shoes flat_shoes regular 페일 핑크 pink spring_light,summer_light wave,pear,hourglass lovely,feminine,elegant spring,summer date,wedding_guest,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-38",
+    "product_type": "fashion",
+    "product_name": "딥 그린 스웨터",
+    "brand_name": "Mellow Form",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "sweater",
+    "color_group": "green",
+    "personal_color_type": [
+      "autumn_deep",
+      "winter_deep"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "oval"
+    ],
+    "style_tag": [
+      "natural",
+      "chic",
+      "casual"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "travel"
+    ],
+    "price": 64000,
+    "image_url": "/images/fashion/f038.jpg",
+    "product_url": null,
+    "recommendation_reason": "깊은 그린이 딥 타입의 무게감을 살리고 니트 소재가 겨울 데일리 룩에 안정적입니다.",
+    "search_text": "딥 그린 스웨터 mellow form unisex top sweater regular 딥 그린 green autumn_deep,winter_deep straight,natural,oval natural,chic,casual fall,winter daily,date,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-39",
+    "product_type": "fashion",
+    "product_name": "오트밀 후디",
+    "brand_name": "Urban Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "hoodie",
+    "color_group": "beige",
+    "personal_color_type": [
+      "spring_light",
+      "autumn_mute"
+    ],
+    "body_type": [
+      "natural",
+      "rectangle",
+      "oval"
+    ],
+    "style_tag": [
+      "casual",
+      "street",
+      "sporty"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 61000,
+    "image_url": "/images/fashion/f039.jpg",
+    "product_url": null,
+    "recommendation_reason": "오트밀 컬러가 웜 라이트와 뮤트 톤에 편안하게 어울리고 오버핏이 캐주얼 무드에 좋습니다.",
+    "search_text": "오트밀 후디 urban veil unisex top hoodie oversized 오트밀 beige spring_light,autumn_mute natural,rectangle,oval casual,street,sporty fall,winter daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-40",
+    "product_type": "fashion",
+    "product_name": "그래파이트 조거 팬츠",
+    "brand_name": "Urban Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "bottom",
+    "sub_category": "jogger_pants",
+    "color_group": "gray",
+    "personal_color_type": [
+      "winter_deep",
+      "summer_mute",
+      "winter_true"
+    ],
+    "body_type": [
+      "natural",
+      "rectangle",
+      "oval"
+    ],
+    "style_tag": [
+      "sporty",
+      "street",
+      "casual"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "workout",
+      "travel",
+      "daily"
+    ],
+    "price": 57000,
+    "image_url": "/images/fashion/f040.jpg",
+    "product_url": null,
+    "recommendation_reason": "차분한 그래파이트가 쿨 톤에 잘 맞고 활동성이 필요한 상황에서 편안합니다.",
+    "search_text": "그래파이트 조거 팬츠 urban veil unisex bottom jogger_pants loose 그래파이트 gray winter_deep,summer_mute,winter_true natural,rectangle,oval sporty,street,casual all workout,travel,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-41",
+    "product_type": "fashion",
+    "product_name": "웜 베이지 블레이저",
+    "brand_name": "Mode Atelier",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "blazer",
+    "color_group": "beige",
+    "personal_color_type": [
+      "spring_true",
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [
+      "straight",
+      "inverted_triangle",
+      "rectangle"
+    ],
+    "style_tag": [
+      "classic",
+      "dandy",
+      "modern"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "office",
+      "interview",
+      "date"
+    ],
+    "price": 124000,
+    "image_url": "/images/fashion/f041.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 베이지가 웜 톤에 안정적이고 구조적인 블레이저가 면접과 직장 룩에 적합합니다.",
+    "search_text": "웜 베이지 블레이저 mode atelier unisex outer blazer structured 웜 베이지 beige spring_true,autumn_mute,autumn_true straight,inverted_triangle,rectangle classic,dandy,modern spring,fall office,interview,date fashion 패션 상품"
+  },
+  {
+    "id": "fashion-42",
+    "product_type": "fashion",
+    "product_name": "플럼 타이 블라우스",
+    "brand_name": "Noir Habit",
+    "gender_target": [
+      "female"
+    ],
+    "category": "top",
+    "sub_category": "tie_blouse",
+    "color_group": "purple",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true",
+      "summer_mute"
+    ],
+    "body_type": [
+      "wave",
+      "straight",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "feminine"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "office",
+      "party"
+    ],
+    "price": 73000,
+    "image_url": "/images/fashion/f042.jpg",
+    "product_url": null,
+    "recommendation_reason": "플럼 컬러가 딥 쿨 톤과 조화롭고 타이 디테일이 상체 포인트를 만들어 줍니다.",
+    "search_text": "플럼 타이 블라우스 noir habit female top tie_blouse regular 플럼 purple winter_deep,winter_true,summer_mute wave,straight,hourglass chic,elegant,feminine fall,winter date,office,party fashion 패션 상품"
+  },
+  {
+    "id": "fashion-43",
+    "product_type": "fashion",
+    "product_name": "화이트 미니멀 스니커즈",
+    "brand_name": "Soft Frame",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "shoes",
+    "sub_category": "sneakers",
+    "color_group": "white",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light",
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "natural",
+      "rectangle",
+      "pear"
+    ],
+    "style_tag": [
+      "minimal",
+      "casual",
+      "sporty"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel",
+      "workout"
+    ],
+    "price": 79000,
+    "image_url": "/images/fashion/f043.jpg",
+    "product_url": null,
+    "recommendation_reason": "깨끗한 화이트가 다양한 톤과 매칭되고 캐주얼 추천의 활용도가 높습니다.",
+    "search_text": "화이트 미니멀 스니커즈 soft frame unisex shoes sneakers regular 화이트 white spring_light,summer_light,winter_bright,winter_true straight,wave,natural,rectangle,pear minimal,casual,sporty all daily,campus,travel,workout fashion 패션 상품"
+  },
+  {
+    "id": "fashion-44",
+    "product_type": "fashion",
+    "product_name": "에스프레소 스트레이트 코트",
+    "brand_name": "Line Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "straight_coat",
+    "color_group": "brown",
+    "personal_color_type": [
+      "autumn_deep",
+      "autumn_true"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "rectangle"
+    ],
+    "style_tag": [
+      "classic",
+      "chic",
+      "dandy"
+    ],
+    "season": [
+      "winter"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "interview"
+    ],
+    "price": 189000,
+    "image_url": "/images/fashion/f044.jpg",
+    "product_url": null,
+    "recommendation_reason": "에스프레소 브라운이 가을 딥의 깊이를 살리고 일자 실루엣이 체형을 길어 보이게 합니다.",
+    "search_text": "에스프레소 스트레이트 코트 line archive unisex outer straight_coat straight 에스프레소 brown autumn_deep,autumn_true straight,natural,rectangle classic,chic,dandy winter office,date,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-45",
+    "product_type": "fashion",
+    "product_name": "스카이 블루 스트라이프 셔츠",
+    "brand_name": "Serein Wear",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "stripe_shirt",
+    "color_group": "blue",
+    "personal_color_type": [
+      "summer_light",
+      "spring_light",
+      "summer_bright"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "natural"
+    ],
+    "style_tag": [
+      "casual",
+      "minimal",
+      "classic"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "campus",
+      "office",
+      "daily"
+    ],
+    "price": 48000,
+    "image_url": "/images/fashion/f045.jpg",
+    "product_url": null,
+    "recommendation_reason": "맑은 블루 스트라이프가 라이트 타입에 청량하고 캠퍼스와 오피스 모두에 적합합니다.",
+    "search_text": "스카이 블루 스트라이프 셔츠 serein wear unisex top stripe_shirt regular 스카이 블루 blue summer_light,spring_light,summer_bright straight,wave,natural casual,minimal,classic spring,summer campus,office,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-46",
+    "product_type": "fashion",
+    "product_name": "블랙 구조적 원피스",
+    "brand_name": "Nero Studio",
+    "gender_target": [
+      "female"
+    ],
+    "category": "dress",
+    "sub_category": "structured_dress",
+    "color_group": "black",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [
+      "straight",
+      "hourglass",
+      "inverted_triangle"
+    ],
+    "style_tag": [
+      "chic",
+      "minimal",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "interview"
+    ],
+    "price": 112000,
+    "image_url": "/images/fashion/f046.jpg",
+    "product_url": null,
+    "recommendation_reason": "블랙과 구조적인 패턴이 겨울 톤과 스트레이트 골격에 잘 맞아 세련된 인상을 줍니다.",
+    "search_text": "블랙 구조적 원피스 nero studio female dress structured_dress structured 블랙 black winter_deep,winter_bright,winter_true straight,hourglass,inverted_triangle chic,minimal,elegant all date,party,interview fashion 패션 상품"
+  },
+  {
+    "id": "fashion-47",
+    "product_type": "fashion",
+    "product_name": "샌드 카고 스커트",
+    "brand_name": "Urban Veil",
+    "gender_target": [
+      "female"
+    ],
+    "category": "bottom",
+    "sub_category": "cargo_skirt",
+    "color_group": "beige",
+    "personal_color_type": [
+      "spring_light",
+      "autumn_mute"
+    ],
+    "body_type": [
+      "natural",
+      "pear",
+      "rectangle"
+    ],
+    "style_tag": [
+      "casual",
+      "street",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 58000,
+    "image_url": "/images/fashion/f047.jpg",
+    "product_url": null,
+    "recommendation_reason": "샌드 베이지가 웜 라이트와 뮤트 톤에 잘 맞고 카고 디테일이 캐주얼 무드를 살립니다.",
+    "search_text": "샌드 카고 스커트 urban veil female bottom cargo_skirt a_line 샌드 beige spring_light,autumn_mute natural,pear,rectangle casual,street,natural spring,summer,fall daily,campus,travel fashion 패션 상품"
+  },
+  {
+    "id": "fashion-48",
+    "product_type": "fashion",
+    "product_name": "올리브 니트 폴로",
+    "brand_name": "Mellow Form",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "top",
+    "sub_category": "knit_polo",
+    "color_group": "khaki",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [
+      "straight",
+      "natural",
+      "rectangle"
+    ],
+    "style_tag": [
+      "natural",
+      "classic",
+      "dandy"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "daily"
+    ],
+    "price": 56000,
+    "image_url": "/images/fashion/f048.jpg",
+    "product_url": null,
+    "recommendation_reason": "올리브 톤이 가을 계열의 피부 온도감과 잘 맞고 폴로 카라가 단정함을 줍니다.",
+    "search_text": "올리브 니트 폴로 mellow form unisex top knit_polo regular 올리브 khaki autumn_mute,autumn_true straight,natural,rectangle natural,classic,dandy spring,fall office,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-49",
+    "product_type": "fashion",
+    "product_name": "아이스 그레이 카디건",
+    "brand_name": "Serein Wear",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "outer",
+    "sub_category": "cardigan",
+    "color_group": "gray",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright",
+      "winter_bright"
+    ],
+    "body_type": [
+      "wave",
+      "straight",
+      "rectangle"
+    ],
+    "style_tag": [
+      "minimal",
+      "modern",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "office",
+      "campus",
+      "daily"
+    ],
+    "price": 54000,
+    "image_url": "/images/fashion/f049.jpg",
+    "product_url": null,
+    "recommendation_reason": "차가운 라이트 그레이가 쿨 톤의 맑은 이미지를 살리고 가벼운 레이어링에 좋습니다.",
+    "search_text": "아이스 그레이 카디건 serein wear unisex outer cardigan regular 아이스 그레이 gray summer_light,summer_bright,winter_bright wave,straight,rectangle minimal,modern,casual spring,summer office,campus,daily fashion 패션 상품"
+  },
+  {
+    "id": "fashion-50",
+    "product_type": "fashion",
+    "product_name": "비비드 레드 스카프",
+    "brand_name": "Vivid Yard",
+    "gender_target": [
+      "female"
+    ],
+    "category": "accessory",
+    "sub_category": "scarf",
+    "color_group": "red",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true",
+      "spring_bright"
+    ],
+    "body_type": [
+      "straight",
+      "wave",
+      "hourglass"
+    ],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "lovely"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 33000,
+    "image_url": "/images/fashion/f050.jpg",
+    "product_url": null,
+    "recommendation_reason": "선명한 레드가 브라이트 타입의 얼굴 생기를 높이고 단순한 룩에 포인트를 줍니다.",
+    "search_text": "비비드 레드 스카프 vivid yard female accessory scarf regular 비비드 레드 red winter_bright,winter_true,spring_bright straight,wave,hourglass chic,elegant,lovely fall,winter date,party,wedding_guest fashion 패션 상품"
+  },
+  {
+    "id": "beauty-1",
+    "product_type": "beauty",
+    "product_name": "딥 베리 벨벳 립스틱",
+    "brand_name": "Tone Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "burgundy",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "modern"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 26000,
+    "image_url": "/images/beauty/b001.jpg",
+    "product_url": null,
+    "recommendation_reason": "겨울 딥의 깊은 대비감을 살리는 베리 컬러로 시크한 메이크업에 적합합니다.",
+    "search_text": "딥 베리 벨벳 립스틱 tone lab female lip lipstick 딥 베리 burgundy cool winter_deep,winter_true velvet chic,elegant,modern fall,winter date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-2",
+    "product_type": "beauty",
+    "product_name": "클리어 레드 워터 틴트",
+    "brand_name": "Prism Skin",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "tint",
+    "color_group": "red",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true",
+      "spring_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "lovely",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "daily"
+    ],
+    "price": 18000,
+    "image_url": "/images/beauty/b002.jpg",
+    "product_url": null,
+    "recommendation_reason": "맑고 선명한 레드가 브라이트 타입의 생기를 높이고 가볍게 레이어링됩니다.",
+    "search_text": "클리어 레드 워터 틴트 prism skin female lip tint 클리어 레드 red cool winter_bright,winter_true,spring_bright sheer chic,lovely,modern all date,party,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-3",
+    "product_type": "beauty",
+    "product_name": "피치 코랄 글로우 틴트",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "tint",
+    "color_group": "coral",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "campus",
+      "daily"
+    ],
+    "price": 17000,
+    "image_url": "/images/beauty/b003.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 코랄이 봄 타입의 혈색을 자연스럽게 살려 데일리 메이크업에 좋습니다.",
+    "search_text": "피치 코랄 글로우 틴트 peach archive female lip tint 피치 코랄 coral warm spring_light,spring_bright,spring_true glow lovely,feminine,casual spring,summer date,campus,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-4",
+    "product_type": "beauty",
+    "product_name": "애프리콧 소프트 블러셔",
+    "brand_name": "Bloom Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "powder_blush",
+    "color_group": "orange",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_true",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "natural",
+      "feminine"
+    ],
+    "season": [
+      "spring"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 22000,
+    "image_url": "/images/beauty/b004.jpg",
+    "product_url": null,
+    "recommendation_reason": "살구빛 컬러가 웜 톤 피부에 부드러운 생기를 주고 과하지 않은 채도를 제공합니다.",
+    "search_text": "애프리콧 소프트 블러셔 bloom lab female cheek powder_blush 애프리콧 orange warm spring_light,spring_true,autumn_true satin lovely,natural,feminine spring daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-5",
+    "product_type": "beauty",
+    "product_name": "로즈 모브 블러셔",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "powder_blush",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_mute",
+      "summer_light"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "feminine",
+      "elegant",
+      "natural"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "office"
+    ],
+    "price": 23000,
+    "image_url": "/images/beauty/b005.jpg",
+    "product_url": null,
+    "recommendation_reason": "차분한 모브 로즈가 여름 뮤트의 낮은 채도와 조화롭고 얼굴을 차분하게 정리합니다.",
+    "search_text": "로즈 모브 블러셔 mauve room female cheek powder_blush 로즈 모브 pink cool summer_mute,summer_light matte feminine,elegant,natural all date,wedding_guest,office beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-6",
+    "product_type": "beauty",
+    "product_name": "라벤더 톤업 베이스",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "tone_up_base",
+    "color_group": "purple",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright",
+      "winter_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "office"
+    ],
+    "price": 31000,
+    "image_url": "/images/beauty/b006.jpg",
+    "product_url": null,
+    "recommendation_reason": "노란기를 보정해 쿨 톤 피부를 맑게 보이게 하고 가벼운 광을 더합니다.",
+    "search_text": "라벤더 톤업 베이스 clear muse unisex base tone_up_base 라벤더 베일 purple cool summer_light,summer_bright,winter_bright glow minimal,natural,modern spring,summer daily,campus,office beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-7",
+    "product_type": "beauty",
+    "product_name": "아이보리 쉬어 쿠션",
+    "brand_name": "Prism Skin",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "cushion",
+    "color_group": "ivory",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "minimal",
+      "lovely"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "date"
+    ],
+    "price": 34000,
+    "image_url": "/images/beauty/b007.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝은 피부톤에 자연스럽게 밀착되고 라이트 타입의 투명한 인상을 살립니다.",
+    "search_text": "아이보리 쉬어 쿠션 prism skin unisex base cushion 라이트 아이보리 ivory neutral spring_light,summer_light dewy natural,minimal,lovely all daily,campus,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-8",
+    "product_type": "beauty",
+    "product_name": "뉴트럴 베이지 파운데이션",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "foundation",
+    "color_group": "beige",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "spring_true",
+      "summer_mute",
+      "autumn_mute",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "modern",
+      "natural"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview"
+    ],
+    "price": 39000,
+    "image_url": "/images/beauty/b008.jpg",
+    "product_url": null,
+    "recommendation_reason": "중간 피부톤에 무난하게 맞고 과한 색 보정 없이 균형 잡힌 베이스를 만듭니다.",
+    "search_text": "뉴트럴 베이지 파운데이션 nude theory unisex base foundation 뉴트럴 베이지 beige neutral spring_true,summer_mute,autumn_mute,winter_true natural minimal,modern,natural all daily,office,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-9",
+    "product_type": "beauty",
+    "product_name": "매트 베이지 쿠션",
+    "brand_name": "Olive Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "cushion",
+    "color_group": "beige",
+    "skin_tone": "olive",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "minimal",
+      "casual"
+    ],
+    "season": [
+      "fall",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "travel"
+    ],
+    "price": 33000,
+    "image_url": "/images/beauty/b009.jpg",
+    "product_url": null,
+    "recommendation_reason": "노란기와 올리브 기가 있는 피부에 안정적이고 매트 마감으로 그림자감을 줄입니다.",
+    "search_text": "매트 베이지 쿠션 olive veil unisex base cushion 뮤트 베이지 beige olive autumn_mute,autumn_true matte natural,minimal,casual fall,summer daily,office,travel beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-10",
+    "product_type": "beauty",
+    "product_name": "테라코타 새틴 립",
+    "brand_name": "Velvet Dew",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "orange",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_true",
+      "autumn_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "natural",
+      "elegant"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "daily"
+    ],
+    "price": 24000,
+    "image_url": "/images/beauty/b010.jpg",
+    "product_url": null,
+    "recommendation_reason": "깊은 오렌지 브라운이 가을 타입의 색온도와 잘 맞아 성숙한 분위기를 줍니다.",
+    "search_text": "테라코타 새틴 립 velvet dew female lip lipstick 테라코타 orange warm autumn_true,autumn_deep satin chic,natural,elegant fall,winter date,party,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-11",
+    "product_type": "beauty",
+    "product_name": "브릭 브라운 립스틱",
+    "brand_name": "Olive Veil",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "brown",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_deep",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "natural",
+      "luxury"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 27000,
+    "image_url": "/images/beauty/b011.jpg",
+    "product_url": null,
+    "recommendation_reason": "가을 딥의 깊이와 채도를 살려 입체감 있는 립 포인트를 만들어 줍니다.",
+    "search_text": "브릭 브라운 립스틱 olive veil female lip lipstick 브릭 브라운 brown warm autumn_deep,autumn_true velvet chic,natural,luxury fall,winter date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-12",
+    "product_type": "beauty",
+    "product_name": "소프트 핑크 아이섀도우",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "single_shadow",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_mute"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 15000,
+    "image_url": "/images/beauty/b012.jpg",
+    "product_url": null,
+    "recommendation_reason": "부드러운 핑크가 여름 라이트 피부에 탁하지 않게 올라가 자연스러운 눈매를 만듭니다.",
+    "search_text": "소프트 핑크 아이섀도우 mauve room female eye single_shadow 소프트 핑크 pink cool summer_light,summer_mute satin lovely,feminine,natural spring,summer daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-13",
+    "product_type": "beauty",
+    "product_name": "토프 그레이 섀도우",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "single_shadow",
+    "color_group": "gray",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_mute",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview"
+    ],
+    "price": 16000,
+    "image_url": "/images/beauty/b013.jpg",
+    "product_url": null,
+    "recommendation_reason": "쿨한 토프 그레이가 여름 뮤트와 겨울 톤의 음영 메이크업에 안정적입니다.",
+    "search_text": "토프 그레이 섀도우 nude theory unisex eye single_shadow 토프 그레이 gray cool summer_mute,winter_true matte minimal,chic,modern all daily,office,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-14",
+    "product_type": "beauty",
+    "product_name": "샴페인 빔 하이라이터",
+    "brand_name": "Lune Glow",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "highlighter",
+    "color_group": "gold",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "elegant",
+      "luxury"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 28000,
+    "image_url": "/images/beauty/b014.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝고 따뜻한 광이 봄 타입의 생기와 잘 맞고 얼굴 중앙을 환하게 밝혀 줍니다.",
+    "search_text": "샴페인 빔 하이라이터 lune glow female cheek highlighter 샴페인 gold warm spring_light,spring_bright,spring_true glow lovely,elegant,luxury all date,party,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-15",
+    "product_type": "beauty",
+    "product_name": "클리어 글로스",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "lip",
+    "sub_category": "lip_gloss",
+    "color_group": "clear",
+    "skin_tone": "all",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "summer_light",
+      "summer_bright",
+      "autumn_mute",
+      "autumn_true",
+      "autumn_deep",
+      "winter_bright",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "casual"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "date",
+      "party"
+    ],
+    "price": 14000,
+    "image_url": "/images/beauty/b015.jpg",
+    "product_url": null,
+    "recommendation_reason": "컬러 타입을 크게 타지 않고 기존 립 위에 광택을 더해 활용도가 높습니다.",
+    "search_text": "클리어 글로스 clear muse unisex lip lip_gloss 클리어 clear all spring_light,spring_bright,summer_light,summer_bright,autumn_mute,autumn_true,autumn_deep,winter_bright,winter_true,winter_deep glow minimal,natural,casual all daily,campus,date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-16",
+    "product_type": "beauty",
+    "product_name": "플럼 젤 아이라이너",
+    "brand_name": "Tone Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "eyeliner",
+    "color_group": "purple",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "modern",
+      "elegant"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 19000,
+    "image_url": "/images/beauty/b016.jpg",
+    "product_url": null,
+    "recommendation_reason": "깊은 플럼 블랙이 겨울 딥의 눈매 대비를 살리고 블랙보다 부드러운 포인트를 줍니다.",
+    "search_text": "플럼 젤 아이라이너 tone lab female eye eyeliner 플럼 블랙 purple cool winter_deep,winter_true matte chic,modern,elegant fall,winter date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-17",
+    "product_type": "beauty",
+    "product_name": "브라운 컬링 마스카라",
+    "brand_name": "Olive Veil",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "mascara",
+    "color_group": "brown",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_true",
+      "autumn_mute",
+      "autumn_true",
+      "autumn_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "casual",
+      "feminine"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "date"
+    ],
+    "price": 21000,
+    "image_url": "/images/beauty/b017.jpg",
+    "product_url": null,
+    "recommendation_reason": "딥 브라운이 웜 톤의 눈매를 부드럽게 강조하고 데일리에 부담이 적습니다.",
+    "search_text": "브라운 컬링 마스카라 olive veil female eye mascara 딥 브라운 brown warm spring_true,autumn_mute,autumn_true,autumn_deep natural natural,casual,feminine all daily,campus,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-18",
+    "product_type": "beauty",
+    "product_name": "애쉬 브로우 펜슬",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "brow_pencil",
+    "color_group": "brown",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_mute",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview"
+    ],
+    "price": 13000,
+    "image_url": "/images/beauty/b018.jpg",
+    "product_url": null,
+    "recommendation_reason": "붉은기를 줄인 애쉬 브라운이 쿨 톤 헤어와 눈썹에 자연스럽게 어울립니다.",
+    "search_text": "애쉬 브로우 펜슬 mauve room unisex eye brow_pencil 애쉬 브라운 brown cool summer_mute,winter_true,winter_deep matte minimal,natural,modern all daily,office,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-19",
+    "product_type": "beauty",
+    "product_name": "올리브 베이지 컨실러",
+    "brand_name": "Olive Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "concealer",
+    "color_group": "beige",
+    "skin_tone": "olive",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "travel"
+    ],
+    "price": 18000,
+    "image_url": "/images/beauty/b019.jpg",
+    "product_url": null,
+    "recommendation_reason": "올리브 기가 있는 피부의 붉은기를 안정적으로 커버하고 베이스 균형을 맞춥니다.",
+    "search_text": "올리브 베이지 컨실러 olive veil unisex base concealer 올리브 베이지 beige olive autumn_mute,autumn_true natural minimal,natural,modern all daily,office,travel beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-20",
+    "product_type": "beauty",
+    "product_name": "쿨 베이지 쿠션",
+    "brand_name": "Prism Skin",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "cushion",
+    "color_group": "beige",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_mute",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "modern",
+      "natural"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "date"
+    ],
+    "price": 35000,
+    "image_url": "/images/beauty/b020.jpg",
+    "product_url": null,
+    "recommendation_reason": "핑크 베이스가 필요한 쿨 톤 피부에 어울리고 세미 새틴 마감으로 단정합니다.",
+    "search_text": "쿨 베이지 쿠션 prism skin unisex base cushion 쿨 베이지 beige cool summer_light,summer_mute,winter_true satin minimal,modern,natural all daily,office,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-21",
+    "product_type": "beauty",
+    "product_name": "로즈 세럼 블러셔",
+    "brand_name": "Lune Glow",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "liquid_blush",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright",
+      "summer_mute"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "feminine",
+      "lovely",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "daily"
+    ],
+    "price": 25000,
+    "image_url": "/images/beauty/b021.jpg",
+    "product_url": null,
+    "recommendation_reason": "촉촉한 로즈 컬러가 여름 타입의 부드러운 혈색을 자연스럽게 표현합니다.",
+    "search_text": "로즈 세럼 블러셔 lune glow female cheek liquid_blush 로즈 세럼 pink cool summer_light,summer_bright,summer_mute dewy feminine,lovely,elegant spring,summer date,wedding_guest,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-22",
+    "product_type": "beauty",
+    "product_name": "코랄 크림 블러셔",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "cream_blush",
+    "color_group": "coral",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "casual",
+      "feminine"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 24000,
+    "image_url": "/images/beauty/b022.jpg",
+    "product_url": null,
+    "recommendation_reason": "코랄 크림 제형이 봄 타입의 맑은 생기를 피부에 자연스럽게 녹입니다.",
+    "search_text": "코랄 크림 블러셔 peach archive female cheek cream_blush 코랄 크림 coral warm spring_light,spring_bright,spring_true dewy lovely,casual,feminine spring,summer daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-23",
+    "product_type": "beauty",
+    "product_name": "허니 베이지 메이크업 베이스",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "makeup_base",
+    "color_group": "beige",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_true",
+      "autumn_true",
+      "autumn_mute"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "minimal",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "fall"
+    ],
+    "situation": [
+      "daily",
+      "travel",
+      "office"
+    ],
+    "price": 30000,
+    "image_url": "/images/beauty/b023.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 베이지 베이스가 웜 톤의 피부 온도감을 살리고 건조해 보이는 인상을 줄입니다.",
+    "search_text": "허니 베이지 메이크업 베이스 peach archive unisex base makeup_base 허니 베이지 beige warm spring_true,autumn_true,autumn_mute glow natural,minimal,casual spring,fall daily,travel,office beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-24",
+    "product_type": "beauty",
+    "product_name": "포슬린 핑크 쿠션",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "female"
+    ],
+    "category": "base",
+    "sub_category": "cushion",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "wedding_guest"
+    ],
+    "price": 36000,
+    "image_url": "/images/beauty/b024.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝은 쿨 핑크 베이스가 여름 라이트 피부를 맑고 화사하게 보이게 합니다.",
+    "search_text": "포슬린 핑크 쿠션 clear muse female base cushion 포슬린 핑크 pink cool summer_light,summer_bright glow lovely,feminine,natural spring,summer daily,date,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-25",
+    "product_type": "beauty",
+    "product_name": "에스프레소 컨투어 스틱",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "cheek",
+    "sub_category": "contour",
+    "color_group": "brown",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "autumn_deep",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "modern",
+      "minimal"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "office"
+    ],
+    "price": 22000,
+    "image_url": "/images/beauty/b025.jpg",
+    "product_url": null,
+    "recommendation_reason": "딥 타입에게 필요한 얼굴 대비감을 만들고 턱선과 코 음영을 또렷하게 정리합니다.",
+    "search_text": "에스프레소 컨투어 스틱 nude theory unisex cheek contour 에스프레소 brown neutral autumn_deep,winter_deep matte chic,modern,minimal all date,party,office beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-26",
+    "product_type": "beauty",
+    "product_name": "피치 베이지 섀도우 팔레트",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "eye_palette",
+    "color_group": "coral",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "natural",
+      "feminine"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 32000,
+    "image_url": "/images/beauty/b026.jpg",
+    "product_url": null,
+    "recommendation_reason": "피치와 베이지 조합이 봄 타입의 맑은 눈매와 데일리 메이크업에 잘 맞습니다.",
+    "search_text": "피치 베이지 섀도우 팔레트 peach archive female eye eye_palette 피치 베이지 coral warm spring_light,spring_bright,spring_true satin lovely,natural,feminine spring,summer daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-27",
+    "product_type": "beauty",
+    "product_name": "뮤트 베이지 섀도우 팔레트",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "eye_palette",
+    "color_group": "beige",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "summer_mute",
+      "autumn_mute"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview"
+    ],
+    "price": 33000,
+    "image_url": "/images/beauty/b027.jpg",
+    "product_url": null,
+    "recommendation_reason": "낮은 채도의 베이지 음영이 뮤트 타입의 차분한 분위기를 해치지 않습니다.",
+    "search_text": "뮤트 베이지 섀도우 팔레트 nude theory unisex eye eye_palette 뮤트 베이지 beige neutral summer_mute,autumn_mute matte minimal,natural,modern all daily,office,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-28",
+    "product_type": "beauty",
+    "product_name": "버건디 립 틴트",
+    "brand_name": "Velvet Dew",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "tint",
+    "color_group": "burgundy",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_deep",
+      "autumn_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "luxury",
+      "elegant"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 19000,
+    "image_url": "/images/beauty/b028.jpg",
+    "product_url": null,
+    "recommendation_reason": "딥 계열의 입체감을 살리는 버건디 컬러로 저녁 약속과 파티에 적합합니다.",
+    "search_text": "버건디 립 틴트 velvet dew female lip tint 버건디 burgundy cool winter_deep,autumn_deep velvet chic,luxury,elegant fall,winter date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-29",
+    "product_type": "beauty",
+    "product_name": "밀크 핑크 립스틱",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "spring_light"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "natural"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 23000,
+    "image_url": "/images/beauty/b029.jpg",
+    "product_url": null,
+    "recommendation_reason": "밝은 핑크가 라이트 타입에 부담 없이 올라가 청순한 혈색을 만듭니다.",
+    "search_text": "밀크 핑크 립스틱 mauve room female lip lipstick 밀크 핑크 pink cool summer_light,spring_light sheer lovely,feminine,natural spring,summer daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-30",
+    "product_type": "beauty",
+    "product_name": "웜 누드 립스틱",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "beige",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_true",
+      "autumn_mute",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "date"
+    ],
+    "price": 24000,
+    "image_url": "/images/beauty/b030.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 누드 베이지가 웜 톤 피부와 자연스럽게 연결되어 차분한 인상을 줍니다.",
+    "search_text": "웜 누드 립스틱 nude theory female lip lipstick 웜 누드 beige warm spring_true,autumn_mute,autumn_true satin minimal,natural,elegant all daily,office,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-31",
+    "product_type": "beauty",
+    "product_name": "클리어 매트 파우더",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "powder",
+    "color_group": "clear",
+    "skin_tone": "all",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true",
+      "summer_light",
+      "summer_bright",
+      "summer_mute",
+      "autumn_mute",
+      "autumn_true",
+      "autumn_deep",
+      "winter_bright",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview",
+      "travel"
+    ],
+    "price": 21000,
+    "image_url": "/images/beauty/b031.jpg",
+    "product_url": null,
+    "recommendation_reason": "색상 영향이 적고 유분과 번들거림을 정돈해 어떤 퍼스널컬러에도 사용하기 쉽습니다.",
+    "search_text": "클리어 매트 파우더 clear muse unisex base powder 클리어 매트 clear all spring_light,spring_bright,spring_true,summer_light,summer_bright,summer_mute,autumn_mute,autumn_true,autumn_deep,winter_bright,winter_true,winter_deep matte minimal,natural,modern all daily,office,interview,travel beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-32",
+    "product_type": "beauty",
+    "product_name": "듀이 픽싱 스프레이",
+    "brand_name": "Lune Glow",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "fixing_spray",
+    "color_group": "clear",
+    "skin_tone": "all",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true",
+      "summer_light",
+      "summer_bright",
+      "summer_mute",
+      "autumn_mute",
+      "autumn_true",
+      "autumn_deep",
+      "winter_bright",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "minimal",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "travel",
+      "party"
+    ],
+    "price": 25000,
+    "image_url": "/images/beauty/b032.jpg",
+    "product_url": null,
+    "recommendation_reason": "색조를 바꾸지 않고 촉촉한 마감을 더해 계절과 상황에 폭넓게 사용할 수 있습니다.",
+    "search_text": "듀이 픽싱 스프레이 lune glow unisex base fixing_spray 듀이 클리어 clear all spring_light,spring_bright,spring_true,summer_light,summer_bright,summer_mute,autumn_mute,autumn_true,autumn_deep,winter_bright,winter_true,winter_deep dewy natural,minimal,modern all daily,date,travel,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-33",
+    "product_type": "beauty",
+    "product_name": "아이스 핑크 하이라이터",
+    "brand_name": "Prism Skin",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "highlighter",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_bright",
+      "summer_light",
+      "summer_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "lovely",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 29000,
+    "image_url": "/images/beauty/b033.jpg",
+    "product_url": null,
+    "recommendation_reason": "차가운 핑크 광이 쿨 브라이트와 라이트 타입의 투명감을 살립니다.",
+    "search_text": "아이스 핑크 하이라이터 prism skin female cheek highlighter 아이스 핑크 pink cool winter_bright,summer_light,summer_bright glow chic,lovely,elegant all date,party,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-34",
+    "product_type": "beauty",
+    "product_name": "코코아 브로우 젤",
+    "brand_name": "Olive Veil",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "brow_gel",
+    "color_group": "brown",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_deep",
+      "autumn_true",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "casual",
+      "dandy"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "campus"
+    ],
+    "price": 17000,
+    "image_url": "/images/beauty/b034.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 브라운 눈썹 결을 만들어 웜 톤 헤어 컬러와 자연스럽게 연결됩니다.",
+    "search_text": "코코아 브로우 젤 olive veil unisex eye brow_gel 코코아 brown warm autumn_deep,autumn_true,spring_true natural natural,casual,dandy all daily,office,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-35",
+    "product_type": "beauty",
+    "product_name": "로즈 베이지 립 펜슬",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lip_pencil",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_mute",
+      "summer_light"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "feminine",
+      "elegant",
+      "natural"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "wedding_guest"
+    ],
+    "price": 16000,
+    "image_url": "/images/beauty/b035.jpg",
+    "product_url": null,
+    "recommendation_reason": "차분한 로즈 베이지가 여름 타입의 립 라인을 자연스럽게 정돈합니다.",
+    "search_text": "로즈 베이지 립 펜슬 mauve room female lip lip_pencil 로즈 베이지 pink cool summer_mute,summer_light matte feminine,elegant,natural all daily,date,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-36",
+    "product_type": "beauty",
+    "product_name": "루비 레드 립스틱",
+    "brand_name": "Tone Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lipstick",
+    "color_group": "red",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_bright",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "elegant",
+      "luxury"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 28000,
+    "image_url": "/images/beauty/b036.jpg",
+    "product_url": null,
+    "recommendation_reason": "선명한 루비 레드가 겨울 브라이트의 대비감과 화려한 상황에 잘 맞습니다.",
+    "search_text": "루비 레드 립스틱 tone lab female lip lipstick 루비 레드 red cool winter_bright,winter_true satin chic,elegant,luxury all date,party,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-37",
+    "product_type": "beauty",
+    "product_name": "메이플 블러셔",
+    "brand_name": "Bloom Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "cheek",
+    "sub_category": "powder_blush",
+    "color_group": "orange",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_true",
+      "autumn_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "elegant",
+      "chic"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "office"
+    ],
+    "price": 23000,
+    "image_url": "/images/beauty/b037.jpg",
+    "product_url": null,
+    "recommendation_reason": "메이플 컬러가 가을 타입의 따뜻하고 깊은 피부 온도감을 살립니다.",
+    "search_text": "메이플 블러셔 bloom lab female cheek powder_blush 메이플 orange warm autumn_true,autumn_deep matte natural,elegant,chic fall,winter daily,date,office beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-38",
+    "product_type": "beauty",
+    "product_name": "라이트 코랄 톤업 선크림",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "skin_care",
+    "sub_category": "tone_up_sunscreen",
+    "color_group": "coral",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "lovely",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 27000,
+    "image_url": "/images/beauty/b038.jpg",
+    "product_url": null,
+    "recommendation_reason": "코랄 기가 봄 타입의 생기를 더하고 낮 시간 외출 상황에 활용하기 좋습니다.",
+    "search_text": "라이트 코랄 톤업 선크림 peach archive unisex skin_care tone_up_sunscreen 라이트 코랄 coral warm spring_light,spring_bright glow natural,lovely,casual spring,summer daily,campus,travel beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-39",
+    "product_type": "beauty",
+    "product_name": "소프트 베이지 프라이머",
+    "brand_name": "Nude Theory",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "primer",
+    "color_group": "beige",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "spring_light",
+      "summer_light",
+      "autumn_mute",
+      "summer_mute"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "interview"
+    ],
+    "price": 26000,
+    "image_url": "/images/beauty/b039.jpg",
+    "product_url": null,
+    "recommendation_reason": "피부 요철을 자연스럽게 정리하고 색감 간섭이 적어 여러 톤에 대응하기 쉽습니다.",
+    "search_text": "소프트 베이지 프라이머 nude theory unisex base primer 소프트 베이지 beige neutral spring_light,summer_light,autumn_mute,summer_mute natural minimal,natural,modern all daily,office,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-40",
+    "product_type": "beauty",
+    "product_name": "누드 애프리콧 글로스",
+    "brand_name": "Peach Archive",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lip_gloss",
+    "color_group": "coral",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_light",
+      "spring_true",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "natural",
+      "casual"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "campus"
+    ],
+    "price": 15000,
+    "image_url": "/images/beauty/b040.jpg",
+    "product_url": null,
+    "recommendation_reason": "누드 코랄빛 광택이 웜 톤 피부에 자연스러운 생기를 더합니다.",
+    "search_text": "누드 애프리콧 글로스 peach archive female lip lip_gloss 누드 애프리콧 coral warm spring_light,spring_true,autumn_true glow lovely,natural,casual spring,summer daily,date,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-41",
+    "product_type": "beauty",
+    "product_name": "모브 그레이 섀도우",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "single_shadow",
+    "color_group": "purple",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_mute",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "chic",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "office",
+      "date",
+      "daily"
+    ],
+    "price": 16000,
+    "image_url": "/images/beauty/b041.jpg",
+    "product_url": null,
+    "recommendation_reason": "쿨한 모브 그레이가 탁하지 않은 음영을 만들어 차분한 쿨 톤 메이크업에 좋습니다.",
+    "search_text": "모브 그레이 섀도우 mauve room unisex eye single_shadow 모브 그레이 purple cool summer_mute,winter_true matte minimal,chic,modern all office,date,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-42",
+    "product_type": "beauty",
+    "product_name": "블랙 브라운 라이너",
+    "brand_name": "Velvet Dew",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "eyeliner",
+    "color_group": "brown",
+    "skin_tone": "neutral",
+    "personal_color_type": [
+      "autumn_deep",
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "modern",
+      "natural"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "date",
+      "party"
+    ],
+    "price": 18000,
+    "image_url": "/images/beauty/b042.jpg",
+    "product_url": null,
+    "recommendation_reason": "블랙보다 부드럽지만 딥 타입의 눈매 대비를 유지해 데일리와 데이트에 모두 적합합니다.",
+    "search_text": "블랙 브라운 라이너 velvet dew unisex eye eyeliner 블랙 브라운 brown neutral autumn_deep,winter_deep,winter_true matte chic,modern,natural all daily,date,party beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-43",
+    "product_type": "beauty",
+    "product_name": "파스텔 라일락 팔레트",
+    "brand_name": "Prism Skin",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "eye_palette",
+    "color_group": "purple",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "feminine",
+      "elegant"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "wedding_guest",
+      "campus"
+    ],
+    "price": 34000,
+    "image_url": "/images/beauty/b043.jpg",
+    "product_url": null,
+    "recommendation_reason": "맑은 라일락이 여름 라이트와 브라이트의 투명한 이미지를 살립니다.",
+    "search_text": "파스텔 라일락 팔레트 prism skin female eye eye_palette 파스텔 라일락 purple cool summer_light,summer_bright satin lovely,feminine,elegant spring,summer date,wedding_guest,campus beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-44",
+    "product_type": "beauty",
+    "product_name": "시나몬 립밤",
+    "brand_name": "Bloom Lab",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "lip",
+    "sub_category": "lip_balm",
+    "color_group": "brown",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_mute",
+      "autumn_true",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "natural",
+      "casual",
+      "minimal"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "daily",
+      "campus",
+      "travel"
+    ],
+    "price": 12000,
+    "image_url": "/images/beauty/b044.jpg",
+    "product_url": null,
+    "recommendation_reason": "은은한 시나몬 컬러가 웜 톤에 자연스럽고 건조한 계절 데일리 케어에 좋습니다.",
+    "search_text": "시나몬 립밤 bloom lab unisex lip lip_balm 시나몬 brown warm autumn_mute,autumn_true,spring_true sheer natural,casual,minimal fall,winter daily,campus,travel beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-45",
+    "product_type": "beauty",
+    "product_name": "쿨 로즈 쿠션",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "base",
+    "sub_category": "cushion",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_light",
+      "summer_mute",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "date"
+    ],
+    "price": 37000,
+    "image_url": "/images/beauty/b045.jpg",
+    "product_url": null,
+    "recommendation_reason": "쿨 로즈 베이스가 붉은기와 노란기를 균형 있게 보정해 쿨 톤 피부에 안정적입니다.",
+    "search_text": "쿨 로즈 쿠션 clear muse unisex base cushion 쿨 로즈 pink cool summer_light,summer_mute,winter_true satin minimal,natural,elegant all daily,office,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-46",
+    "product_type": "beauty",
+    "product_name": "골든 쉬머 섀도우",
+    "brand_name": "Lune Glow",
+    "gender_target": [
+      "female"
+    ],
+    "category": "eye",
+    "sub_category": "single_shadow",
+    "color_group": "gold",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "spring_bright",
+      "spring_true",
+      "autumn_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "luxury",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "wedding_guest"
+    ],
+    "price": 17000,
+    "image_url": "/images/beauty/b046.jpg",
+    "product_url": null,
+    "recommendation_reason": "따뜻한 골드 광이 웜 톤의 눈가에 생기와 화려함을 더합니다.",
+    "search_text": "골든 쉬머 섀도우 lune glow female eye single_shadow 골든 쉬머 gold warm spring_bright,spring_true,autumn_true glow lovely,luxury,elegant all date,party,wedding_guest beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-47",
+    "product_type": "beauty",
+    "product_name": "벨벳 누드 틴트",
+    "brand_name": "Velvet Dew",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "tint",
+    "color_group": "beige",
+    "skin_tone": "warm",
+    "personal_color_type": [
+      "autumn_mute",
+      "spring_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "elegant"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "date"
+    ],
+    "price": 19000,
+    "image_url": "/images/beauty/b047.jpg",
+    "product_url": null,
+    "recommendation_reason": "저채도 누드 컬러가 가을 뮤트의 차분함과 봄 트루의 따뜻함에 자연스럽습니다.",
+    "search_text": "벨벳 누드 틴트 velvet dew female lip tint 벨벳 누드 beige warm autumn_mute,spring_true velvet minimal,natural,elegant all daily,office,date beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-48",
+    "product_type": "beauty",
+    "product_name": "베리 핑크 틴트",
+    "brand_name": "Mauve Room",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "tint",
+    "color_group": "pink",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "summer_bright",
+      "winter_bright"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "lovely",
+      "chic",
+      "feminine"
+    ],
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "situation": [
+      "date",
+      "party",
+      "daily"
+    ],
+    "price": 18000,
+    "image_url": "/images/beauty/b048.jpg",
+    "product_url": null,
+    "recommendation_reason": "맑은 베리 핑크가 쿨 브라이트 타입의 생기와 선명도를 높입니다.",
+    "search_text": "베리 핑크 틴트 mauve room female lip tint 베리 핑크 pink cool summer_bright,winter_bright glow lovely,chic,feminine spring,summer date,party,daily beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-49",
+    "product_type": "beauty",
+    "product_name": "뉴트럴 클리어 브로우 왁스",
+    "brand_name": "Clear Muse",
+    "gender_target": [
+      "unisex"
+    ],
+    "category": "eye",
+    "sub_category": "brow_wax",
+    "color_group": "clear",
+    "skin_tone": "all",
+    "personal_color_type": [
+      "spring_light",
+      "spring_bright",
+      "spring_true",
+      "summer_light",
+      "summer_bright",
+      "summer_mute",
+      "autumn_mute",
+      "autumn_true",
+      "autumn_deep",
+      "winter_bright",
+      "winter_true",
+      "winter_deep"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "minimal",
+      "natural",
+      "modern"
+    ],
+    "season": [
+      "all"
+    ],
+    "situation": [
+      "daily",
+      "office",
+      "campus",
+      "interview"
+    ],
+    "price": 14000,
+    "image_url": "/images/beauty/b049.jpg",
+    "product_url": null,
+    "recommendation_reason": "색상 영향을 주지 않고 눈썹 결만 정돈해 모든 퍼스널컬러에 적용하기 쉽습니다.",
+    "search_text": "뉴트럴 클리어 브로우 왁스 clear muse unisex eye brow_wax 클리어 clear all spring_light,spring_bright,spring_true,summer_light,summer_bright,summer_mute,autumn_mute,autumn_true,autumn_deep,winter_bright,winter_true,winter_deep natural minimal,natural,modern all daily,office,campus,interview beauty 뷰티 화장품"
+  },
+  {
+    "id": "beauty-50",
+    "product_type": "beauty",
+    "product_name": "다크 체리 립 라커",
+    "brand_name": "Tone Lab",
+    "gender_target": [
+      "female"
+    ],
+    "category": "lip",
+    "sub_category": "lip_lacquer",
+    "color_group": "burgundy",
+    "skin_tone": "cool",
+    "personal_color_type": [
+      "winter_deep",
+      "winter_true"
+    ],
+    "body_type": [],
+    "style_tag": [
+      "chic",
+      "luxury",
+      "elegant"
+    ],
+    "season": [
+      "fall",
+      "winter"
+    ],
+    "situation": [
+      "date",
+      "party"
+    ],
+    "price": 29000,
+    "image_url": "/images/beauty/b050.jpg",
+    "product_url": null,
+    "recommendation_reason": "다크 체리 컬러가 겨울 딥의 고대비 이미지를 강화하고 포인트 메이크업에 적합합니다.",
+    "search_text": "다크 체리 립 라커 tone lab female lip lip_lacquer 다크 체리 burgundy cool winter_deep,winter_true velvet chic,luxury,elegant fall,winter date,party beauty 뷰티 화장품"
+  }
+]

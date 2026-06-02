@@ -1,4 +1,4 @@
-export type Page = "main" | "personal-color" | "skeleton" | "body-shape" | "face-shape" | "login" | "signup" | "about";
+export type Page = "main" | "personal-color" | "skeleton" | "body-shape" | "login" | "signup" | "mypage" | "about";
 
 export type PCAnswer = "A" | "B" | "C" | "D";
 export type PersonalColorDetail = "Light" | "Bright" | "Mute" | "Deep" | "True";
@@ -16,6 +16,14 @@ export type PersonalColorTypeKey =
   | "winterTrue"
   | "winterDeep";
 export type Gender = "male" | "female";
+
+export interface AuthUser {
+  id: number;
+  email: string;
+  nickname: string;
+  gender: Gender | null;
+  created_at?: string;
+}
 export type StylePreference =
   | "minimal"
   | "casual"
@@ -26,19 +34,6 @@ export type StylePreference =
   | "dandy"
   | "sports"
   | "luxury";
-export type WearingPurpose =
-  | "daily"
-  | "school"
-  | "work"
-  | "date"
-  | "travel"
-  | "exercise"
-  | "interview"
-  | "wedding"
-  | "party";
-export type BodyFeatureLevel = "low" | "medium" | "high";
-export type BodyRatioLevel = "short" | "balanced" | "long";
-
 export interface PCQuestion {
   q: string;
   options: {
@@ -96,6 +91,13 @@ export interface AISkinAnalysis {
   evidence: string[];
   recommendationPoints: string[];
   cautionPoints: string[];
+  cameraFrame?: {
+    canAnalyze?: boolean | null;
+    failedChecks?: string[];
+    centerOffset?: number | null;
+    faceSizeRatio?: number | null;
+    tiltDegrees?: number | null;
+  };
   metrics: {
     brightness: number;
     saturation: number;
@@ -175,13 +177,67 @@ export interface UserProfile {
   gender: Gender;
   height: string;
   weight: string;
-  shoulderWidth: BodyFeatureLevel;
-  waistLine: BodyFeatureLevel;
-  hipWidth: BodyFeatureLevel;
-  legRatio: BodyRatioLevel;
-  upperLowerRatio: BodyRatioLevel;
   stylePreferences: StylePreference[];
-  wearingPurposes: WearingPurpose[];
+}
+
+export interface RecommendationProduct {
+  id: string;
+  productType: "fashion" | "beauty";
+  title: string;
+  mallName: string;
+  lprice: number;
+  productUrl?: string | null;
+  externalSearchUrl: string;
+  externalSearchKeywords: string[];
+  link: string;
+  linkType: "product_url" | "search_fallback";
+  image: string;
+  imagePath: string;
+  recommendationReason: string;
+  matchScore: number;
+  matchConfidence: number;
+  matchReasons: string[];
+  category: string;
+  subCategory: string;
+  colorGroup: string;
+  brandName: string;
+}
+
+export interface MyPageRecommendation {
+  id: number;
+  recommended_style: string;
+  recommended_items: RecommendationProduct[];
+  created_at: string;
+}
+
+export interface MyPageDashboard {
+  user: AuthUser;
+  latest_personal_color: {
+    id: number;
+    season: string;
+    tone: string;
+    confidence: number;
+    created_at: string;
+  } | null;
+  body_type_results: {
+    id: number;
+    body_type: string;
+    confidence: number;
+    created_at: string;
+  }[];
+  latest_skeleton_type: {
+    id: number;
+    skeleton_type: string;
+    confidence: number;
+    created_at: string;
+  } | null;
+  latest_body_shape: {
+    id: number;
+    body_shape: string;
+    confidence: number;
+    created_at: string;
+  } | null;
+  recommendations: MyPageRecommendation[];
 }
 
 export interface CameraCheck {
@@ -207,4 +263,12 @@ export interface CameraFrameAnalysis {
   faceSizeRatio: number;
   tiltDegrees: number;
   checks: CameraCheck[];
+}
+
+export interface CameraQualitySnapshot {
+  confidence?: number;
+  qualityLabel?: string;
+  warnings?: string[];
+  metrics?: AISkinAnalysis["metrics"];
+  cameraFrame?: AISkinAnalysis["cameraFrame"] | CameraFrameAnalysis;
 }

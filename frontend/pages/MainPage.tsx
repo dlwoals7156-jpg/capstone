@@ -11,20 +11,15 @@ import {
   UserRound,
 } from "lucide-react";
 import {
-  BodyFeatureLevel,
-  BodyRatioLevel,
   Page,
+  RecommendationProduct,
   StylePreference,
   UserProfile,
-  WearingPurpose,
 } from "../src/types";
 import {
-  BODY_FEATURE_LABELS,
-  BODY_RATIO_LABELS,
   HINTS,
   ITEMS_DB,
   PC_RESULTS,
-  PURPOSE_OPTIONS,
   STYLE_OPTIONS,
 } from "../src/constants/data";
 
@@ -39,7 +34,7 @@ interface MainPageProps {
   setUserProfile: Dispatch<SetStateAction<UserProfile>>;
   onNavigate: (page: Page) => void;
   handleBackendSearch: (queryText: string) => Promise<void>;
-  backendItems: any[];
+  backendItems: RecommendationProduct[];
   aiGuidance: string;
   isLoading: boolean;
   isSearched: boolean;
@@ -73,27 +68,14 @@ export function MainPage({
   const selectedStyleLabels = userProfile.stylePreferences
     .map((value) => STYLE_OPTIONS.find((item) => item.value === value)?.label)
     .filter(Boolean);
-  const selectedPurposeLabels = userProfile.wearingPurposes
-    .map((value) => PURPOSE_OPTIONS.find((item) => item.value === value)?.label)
-    .filter(Boolean);
 
-  const profileScore = Math.min(
-    96,
-    58 +
-      (userProfile.height ? 6 : 0) +
-      (userProfile.weight ? 6 : 0) +
-      userProfile.stylePreferences.length * 3 +
-      userProfile.wearingPurposes.length * 3 +
-      12,
-  );
+  const backendTopConfidence = backendItems[0]?.matchConfidence;
 
   const recommendationReasons = [
     `${selectedColor} 퍼스널컬러와 얼굴 주변 색 조화를 우선 반영`,
     `${selectedSkeleton} 골격에 맞는 소재감과 핏 밸런스 적용`,
     `${selectedBody} 체형의 어깨·허리·골반 비율 보완`,
-    `${selectedStyleLabels.length ? selectedStyleLabels.join(", ") : "선호 스타일"} 취향과 ${
-      selectedPurposeLabels.length ? selectedPurposeLabels.join(", ") : "착용 목적"
-    } 상황 반영`,
+    `${selectedStyleLabels.length ? selectedStyleLabels.join(", ") : "선호 스타일"} 취향 반영`,
   ];
 
   const updateProfile = (patch: Partial<UserProfile>) => {
@@ -105,14 +87,6 @@ export function MainPage({
       const exists = prev.stylePreferences.includes(value);
       const next = exists ? prev.stylePreferences.filter((item) => item !== value) : [...prev.stylePreferences, value];
       return { ...prev, stylePreferences: next };
-    });
-  };
-
-  const togglePurpose = (value: WearingPurpose) => {
-    setUserProfile((prev) => {
-      const exists = prev.wearingPurposes.includes(value);
-      const next = exists ? prev.wearingPurposes.filter((item) => item !== value) : [...prev.wearingPurposes, value];
-      return { ...prev, wearingPurposes: next };
     });
   };
 
@@ -177,54 +151,6 @@ export function MainPage({
     </button>
   );
 
-  const FeatureSelector = ({
-    label,
-    value,
-    onChange,
-  }: {
-    label: string;
-    value: BodyFeatureLevel;
-    onChange: (value: BodyFeatureLevel) => void;
-  }) => (
-    <div className="space-y-2">
-      <p className="text-[12px] text-black/55">{label}</p>
-      <div className="grid grid-cols-3 gap-1.5">
-        {(["low", "medium", "high"] as BodyFeatureLevel[]).map((item) => (
-          <SegmentButton
-            key={item}
-            active={value === item}
-            label={BODY_FEATURE_LABELS[item]}
-            onClick={() => onChange(item)}
-          />
-        ))}
-      </div>
-    </div>
-  );
-
-  const RatioSelector = ({
-    label,
-    value,
-    onChange,
-  }: {
-    label: string;
-    value: BodyRatioLevel;
-    onChange: (value: BodyRatioLevel) => void;
-  }) => (
-    <div className="space-y-2">
-      <p className="text-[12px] text-black/55">{label}</p>
-      <div className="grid grid-cols-3 gap-1.5">
-        {(["short", "balanced", "long"] as BodyRatioLevel[]).map((item) => (
-          <SegmentButton
-            key={item}
-            active={value === item}
-            label={BODY_RATIO_LABELS[item]}
-            onClick={() => onChange(item)}
-          />
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
       <aside className="space-y-6 lg:col-span-4 lg:border-r lg:border-black/5 lg:pr-10">
@@ -257,43 +183,6 @@ export function MainPage({
         </section>
 
         <section className="rounded-lg border border-black/10 p-4 sm:p-5">
-          <div className="mb-4 flex items-start justify-between gap-4">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-black/30">Body Features</p>
-              <p className="mt-1 text-[15px] font-medium text-black">체형 관련 입력</p>
-            </div>
-            <Ruler size={18} className="text-black/35" />
-          </div>
-          <div className="space-y-4">
-            <FeatureSelector
-              label="어깨 넓이 인식"
-              value={userProfile.shoulderWidth}
-              onChange={(shoulderWidth) => updateProfile({ shoulderWidth })}
-            />
-            <FeatureSelector
-              label="허리 라인"
-              value={userProfile.waistLine}
-              onChange={(waistLine) => updateProfile({ waistLine })}
-            />
-            <FeatureSelector
-              label="골반 너비"
-              value={userProfile.hipWidth}
-              onChange={(hipWidth) => updateProfile({ hipWidth })}
-            />
-            <RatioSelector
-              label="다리 비율"
-              value={userProfile.legRatio}
-              onChange={(legRatio) => updateProfile({ legRatio })}
-            />
-            <RatioSelector
-              label="상체/하체 비율"
-              value={userProfile.upperLowerRatio}
-              onChange={(upperLowerRatio) => updateProfile({ upperLowerRatio })}
-            />
-          </div>
-        </section>
-
-        <section className="rounded-lg border border-black/10 p-4 sm:p-5">
           <p className="text-[10px] uppercase tracking-[0.2em] text-black/30">Style Preferences</p>
           <p className="mt-1 text-[15px] font-medium text-black">스타일 선호도</p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -304,27 +193,6 @@ export function MainPage({
                 onClick={() => toggleStyle(item.value)}
                 className={`rounded-lg border px-3 py-2 text-[12px] transition-colors ${
                   userProfile.stylePreferences.includes(item.value)
-                    ? "border-black bg-black text-white"
-                    : "border-black/10 text-black/55 hover:border-black/35"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-lg border border-black/10 p-4 sm:p-5">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-black/30">Wearing Purpose</p>
-          <p className="mt-1 text-[15px] font-medium text-black">착용 목적</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {PURPOSE_OPTIONS.map((item) => (
-              <button
-                key={item.value}
-                type="button"
-                onClick={() => togglePurpose(item.value)}
-                className={`rounded-lg border px-3 py-2 text-[12px] transition-colors ${
-                  userProfile.wearingPurposes.includes(item.value)
                     ? "border-black bg-black text-white"
                     : "border-black/10 text-black/55 hover:border-black/35"
                 }`}
@@ -403,8 +271,8 @@ export function MainPage({
               </p>
             </div>
             <div className="rounded-lg border border-black/10 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-black/30">Profile Confidence</p>
-              <p className="mt-1 text-2xl font-light">{profileScore}%</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-black/30">Backend Match</p>
+              <p className="mt-1 text-2xl font-light">{isSearched && backendTopConfidence ? `${backendTopConfidence}%` : "Ready"}</p>
             </div>
           </div>
         </div>
@@ -489,26 +357,23 @@ export function MainPage({
                 </p>
               ) : (
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                  {backendItems.map((item: any, i: number) => {
-                    const titleText = String(item.title || item.productName || "추천 상품").replace(/<[^>]*>?/g, "");
-                    const isLocalItem = String(item.link || "").startsWith("#");
+                  {backendItems.map((item, i) => {
+                    const titleText = item.title || "추천 상품";
+                    const isSearchFallback = item.linkType === "search_fallback";
+                    const imageSrc = item.image || item.imagePath;
                     const ProductIcon = item.productType === "beauty" ? Sparkles : Shirt;
-                    const reasons = item.recommendationReason
-                      ? [item.recommendationReason, ...recommendationReasons.slice(0, 2)]
-                      : recommendationReasons.slice(0, 3);
+                    const reasons = [item.recommendationReason, ...item.matchReasons].filter(Boolean).slice(0, 4);
+                    const destination = item.productUrl || item.externalSearchUrl || item.link || "#";
 
                     return (
-                      <a
+                      <article
                         key={`${item.link || item.id || titleText}-${i}`}
-                        href={item.link || "#"}
-                        target={isLocalItem ? undefined : "_blank"}
-                        rel={isLocalItem ? undefined : "noopener noreferrer"}
                         className="group flex h-full flex-col overflow-hidden rounded-lg border border-black/10 bg-white transition-colors hover:border-black/30"
                       >
                         <div className="flex aspect-[3/4] w-full items-center justify-center overflow-hidden border-b border-black/5 bg-black/[0.02]">
-                          {item.image ? (
+                          {imageSrc ? (
                             <img
-                              src={item.image}
+                              src={imageSrc}
                               alt={titleText}
                               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                             />
@@ -523,17 +388,26 @@ export function MainPage({
                         </div>
                         <div className="flex flex-1 flex-col justify-between gap-4 p-4">
                           <div>
-                            <p
-                              className="mb-1 line-clamp-2 text-[13px] font-medium leading-snug text-black"
-                              dangerouslySetInnerHTML={{ __html: item.title || titleText }}
-                            />
+                            <p className="mb-1 line-clamp-2 text-[13px] font-medium leading-snug text-black">{titleText}</p>
                             <p className="text-[11px] text-black/40">{item.mallName || "쇼핑 결과"}</p>
                             <p className="mt-2 text-[15px] font-semibold text-black">
                               {Number(item.lprice || 0).toLocaleString()}원
                             </p>
                             {typeof item.matchScore === "number" && (
-                              <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-black/30">
-                                Match {item.matchScore}
+                              <div className="mt-2 flex flex-wrap items-center gap-2">
+                                <span className="rounded-md bg-black px-2 py-1 text-[10px] uppercase tracking-[0.16em] text-white">
+                                  Match {item.matchConfidence}%
+                                </span>
+                                {isSearchFallback && (
+                                  <span className="rounded-md border border-black/10 px-2 py-1 text-[10px] text-black/40">
+                                    검색 연결
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                            {isSearchFallback && item.externalSearchKeywords?.length > 0 && (
+                              <p className="mt-2 text-[10px] leading-relaxed text-black/38">
+                                검색 키워드: {item.externalSearchKeywords[0]}
                               </p>
                             )}
                           </div>
@@ -545,8 +419,20 @@ export function MainPage({
                               </p>
                             ))}
                           </div>
+                          <a
+                            href={destination}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex items-center justify-center rounded-lg px-4 py-3 text-[12px] uppercase tracking-widest transition-colors ${
+                              isSearchFallback
+                                ? "border border-black/20 text-black/60 hover:border-black"
+                                : "bg-black text-white hover:bg-black/80"
+                            }`}
+                          >
+                            {isSearchFallback ? "검색 결과 보기" : "상품 페이지 이동"}
+                          </a>
                         </div>
-                      </a>
+                      </article>
                     );
                   })}
                 </div>

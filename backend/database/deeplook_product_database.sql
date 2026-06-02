@@ -29,6 +29,7 @@ CREATE TABLE fashion_products (
   situation SET('daily', 'campus', 'date', 'interview', 'wedding_guest', 'travel', 'party', 'workout', 'office') NOT NULL,
   price INT UNSIGNED NOT NULL,
   image_url VARCHAR(255) NOT NULL,
+  product_url VARCHAR(500) NULL,
   recommendation_reason VARCHAR(500) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (product_id),
@@ -63,6 +64,7 @@ CREATE TABLE beauty_products (
   situation SET('daily', 'campus', 'date', 'interview', 'wedding_guest', 'travel', 'party', 'workout', 'office') NOT NULL,
   price INT UNSIGNED NOT NULL,
   image_url VARCHAR(255) NOT NULL,
+  product_url VARCHAR(500) NULL,
   recommendation_reason VARCHAR(500) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (product_id),
@@ -196,6 +198,7 @@ SELECT
   sub_category,
   price,
   image_url,
+  product_url,
   recommendation_reason
 FROM fashion_products
 WHERE FIND_IN_SET('winter_deep', personal_color_type)
@@ -211,6 +214,7 @@ SELECT
   brand_name,
   price,
   image_url,
+  product_url,
   recommendation_reason
 FROM fashion_products
 WHERE FIND_IN_SET('winter_deep', personal_color_type)
@@ -232,6 +236,7 @@ SELECT
   finish_type,
   price,
   image_url,
+  product_url,
   recommendation_reason
 FROM beauty_products
 WHERE FIND_IN_SET('winter_deep', personal_color_type)
@@ -247,6 +252,7 @@ SELECT
   brand_name,
   price,
   image_url,
+  product_url,
   recommendation_reason,
   (
     IF(FIND_IN_SET('winter_deep', personal_color_type), 40, 0) +
