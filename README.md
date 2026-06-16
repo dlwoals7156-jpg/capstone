@@ -63,32 +63,83 @@ pip install -r requirements.txt
 ```
 ---------------------------------------------------------------
 ## 윈도우
-1단계: Node.js (프론트엔드/작업 공간) 의존성 설치 및 실행
+🚀 DeepLook 캡스톤 프로젝트 처음부터 실행하는 마스터 가이드
+1단계: 필수 프로그램 준비하기 (딱 2개)
+1. Node.js 설치 (프론트엔드용)
+구글에 Node.js를 검색하거나 공식 홈페이지(https://nodejs.org)에 접속합니다.
 
-Bash
-# 1. 필요한 자바스크립트 패키지들을 한 번에 설치합니다.
+왼쪽의 LTS 라고 적힌 안정화 버전을 다운로드하여 설치합니다. (설치 중 나오는 옵션은 전부 Next 누르시면 됩니다.)
+
+2. Python 임베디드 버전 준비 (백엔드용)
+우리가 성공했던 가장 확실한 방식입니다.
+
+파이썬 공식 홈페이지 다운로드 페이지에서 Windows embeddable package (64-bit) zip 파일을 다운로드합니다.
+
+다운로드한 압축 파일을 D:\python-3.14.6-embed-amd64 경로에 압축 해제합니다.
+
+압축을 푼 폴더 안에 들어가서 python314._pth 파일을 메모장으로 엽니다.
+
+맨 밑에 있는 #import site 맨 앞의 #을 지우고 import site로 수정한 뒤 저장합니다.
+
+2단계: 프론트엔드(Frontend) 세팅 및 실행
+윈도우 터미널(CMD)을 새로 열고, 프로젝트 폴더로 이동합니다.
+
+DOS
+cd D:\capstone\capstone-main
+패키지 매니저인 pnpm을 전역으로 설치합니다.
+
+DOS
+npm install -g pnpm
+프론트엔드 소스코드가 모여있는 frontend 폴더로 이동합니다.
+
+DOS
+cd frontend
+프론트엔드 구동에 필요한 패키지들을 일괄 설치합니다.
+
+DOS
 pnpm install
+빌드 스크립트 실행 권한을 승인해 줍니다.
 
-# 2. 프로젝트를 실행합니다. (package.json 내부 스크립트에 따라 dev 또는 start)
+DOS
+pnpm approve-builds
+프론트엔드 서버를 실행합니다.
+
+DOS
 pnpm dev
-# (만약 dev가 없다면 pnpm start 를 시도해 보세요)
-실행이 성공하면 터미널에 http://localhost:5173이나 http://localhost:3000 같은 주소가 뜰 겁니다. 브라우저로 접속하시면 됩니다.
+정상 실행되면 터미널에 http://localhost:5173 주소가 뜹니다. 인터넷 창을 열고 이 주소로 접속해 둡니다.
 
-2단계: Python (백엔드) 의존성 설치 및 실행
-requirements.txt가 있는 것을 보니 Python 서버(FastAPI, Flask 등)도 함께 구동되어야 정상 작동할 것입니다. 터미널 창을 새로 하나 더 열어서 아래 과정을 진행하세요.
+3단계: 백엔드(Backend) 세팅 및 실행 (터미널 새로 열기!)
+⚠️ [중요] 프론트엔드가 켜져 있는 터미널 창은 그대로 켜두고, 새로운 윈도우 터미널(CMD) 창을 하나 더 켭니다.
 
-Bash
-# 1. (선택/권장) 파이썬 가상환경 생성 및 활성화
-python -m venv venv
-# Windows 가상환경 활성화 명령어:
-.\venv\Scripts\activate
+새 터미널 창에서 임베디드 파이썬 폴더로 이동하여 pip(패키지 설치 프로그램)를 주입해 줍니다.
 
-# 2. 파이썬 라이브러리 일괄 설치
-pip install -r requirements.txt
+DOS
+cd D:\python-3.14.6-embed-amd64
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python.exe get-pip.py
+다시 프로젝트의 루트 폴더로 이동합니다.
 
-# 3. 백엔드 서버 실행
-# (보통 main.py, app.py, 혹은 cap.py 등의 파일이 있을 겁니다. 파일명을 확인해 보세요)
-python main.py
+DOS
+cd D:\capstone\capstone-main
+임베디드 파이썬 명령어를 직접 찔러서 백엔드 필수 라이브러리(fastapi, uvicorn 등)를 일괄 설치합니다.
+
+DOS
+D:\python-3.14.6-embed-amd64\python.exe -m pip install -r requirements.txt
+마지막으로 백엔드 서버를 구동합니다.
+
+DOS
+D:\python-3.14.6-embed-amd64\python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+터미널에 Uvicorn running on http://127.0.0.1:8000 문구가 뜨면 백엔드까지 완벽하게 성공한 것입니다.
+
+4단계: 확인 및 시연
+이제 터미널 창 2개가 동시에 열려 있고 둘 다 정상 작동 중인 상태입니다.
+
+아까 2단계에서 열어두었던 http://localhost:5173 웹 브라우저 창으로 이동합니다.
+
+새로고침(F5)을 누릅니다.
+
+화면에 떠 있던 "백엔드 연결을 확인해 주세요" 경고창이 깔끔하게 사라지고, 지역 연계 패션 브랜드 상품 추천 및 AI 퍼스널컬러/체형 진단 기능이 정상적으로 맞물려 돌아가는지 확인합니다.
+
 ---------------------------------------------------------------------
 이미 `.venv`가 만들어져 있다면 아래만 실행하면 됩니다.
 
