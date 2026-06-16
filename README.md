@@ -61,7 +61,36 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+---------------------------------------------------------------
+윈도우
+1단계: Node.js (프론트엔드/작업 공간) 의존성 설치 및 실행
+pnpm-workspace.yaml이 있는 것으로 보아 모노레포 구조일 확률이 높습니다. 최상위 폴더에서 다음을 실행하세요.
 
+Bash
+# 1. 필요한 자바스크립트 패키지들을 한 번에 설치합니다.
+pnpm install
+
+# 2. 프로젝트를 실행합니다. (package.json 내부 스크립트에 따라 dev 또는 start)
+pnpm dev
+# (만약 dev가 없다면 pnpm start 를 시도해 보세요)
+실행이 성공하면 터미널에 http://localhost:5173이나 http://localhost:3000 같은 주소가 뜰 겁니다. 브라우저로 접속하시면 됩니다.
+
+2단계: Python (백엔드) 의존성 설치 및 실행
+requirements.txt가 있는 것을 보니 Python 서버(FastAPI, Flask 등)도 함께 구동되어야 정상 작동할 것입니다. 터미널 창을 새로 하나 더 열어서 아래 과정을 진행하세요.
+
+Bash
+# 1. (선택/권장) 파이썬 가상환경 생성 및 활성화
+python -m venv venv
+# Windows 가상환경 활성화 명령어:
+.\venv\Scripts\activate
+
+# 2. 파이썬 라이브러리 일괄 설치
+pip install -r requirements.txt
+
+# 3. 백엔드 서버 실행
+# (보통 main.py, app.py, 혹은 cap.py 등의 파일이 있을 겁니다. 파일명을 확인해 보세요)
+python main.py
+---------------------------------------------------------------------
 이미 `.venv`가 만들어져 있다면 아래만 실행하면 됩니다.
 
 ```bash
